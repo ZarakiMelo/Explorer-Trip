@@ -1,6 +1,22 @@
 .container_hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    height: 100vh; 
+    height: 100vh;
+    width: 100vw;
     background: url('/public/heroImage.jpg') no-repeat center center; 
     background-size: cover;
   }
+
+  .logo_container{
+    height: 45%;
+    width: auto;
+    margin-top: 5%;
+  }
+
+  .logo{
+    height: 100%;
+  }
+

@@ -1,0 +1,43 @@
+.quotes_container{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 70vh;
+    width: 100vw;
+    border: 3px solid red;
+}
+
+.quote_left_container{
+    display:flex;
+    min-height: 110px;
+    min-width: 570px;
+    max-width: 800px;
+    margin-right: 10%;
+    border: 3px solid blue;
+}
+
+.quote_right_container{
+    display:flex;
+    min-height: 110px;
+    min-width: 570px;
+    max-width: 800px;
+    margin-left: 10%;
+    border: 3px solid green;
+}
+
+text{
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width:100% ;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px){
+    .quotes_container{
+
+       
+    }
+}
+    

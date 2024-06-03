@@ -4,13 +4,15 @@
     align-items: center;
     justify-content: center;
     height: 90%;
-    width: 25vw;
+    width: 500px;
+    border:2px solid red
 }
 
 .image{
     height: 400px;
     width: 400px;
     border-radius: 200px;
+    border:2px solid red
 
 }
 
@@ -18,8 +20,35 @@
     text-align: center;
     font-size: 30px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 200px;
+    border:2px solid red
 }
 .number{
     font-size: 60px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border:2px solid red
 }
+
+
+ /* Styles for mobile view */
+ @media screen and (max-width: 950px) {
+    .number{
+        margin-top: -20px;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 700px;
+        width: 500px;
+        border:2px solid red;
+    }
+
+ }  
+ @media (min-width:951px) and (max-width: 1500px) {
+    .image{
+        height: 300px;
+        width: 300px;
+    }
+ }  

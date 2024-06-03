@@ -1,11 +1,6 @@
-.divider_container{
-    display: flex;
-    justify-content: center;
-    height: 5px;
-    width: 100vw;
-}
+
 .horizontal_divider {
     border: none;
-    border-top: 5px solid #5A6E55;
-    width: 60%;
+    border-top: 1px solid #f6fbf5;
+    width: 100%;
   }

@@ -1,0 +1,23 @@
+.quote_left_container{
+    display:flex;
+    min-height: 110px;
+    min-width: 570px;
+    max-width: 800px;
+    margin-right: 10%;
+}
+
+.quote_right_container{
+    display:flex;
+    min-height: 110px;
+    min-width: 570px;
+    max-width: 800px;
+    margin-left: 10%;
+}
+
+.quote_text{
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width:100% ;
+    text-align: center;
+}

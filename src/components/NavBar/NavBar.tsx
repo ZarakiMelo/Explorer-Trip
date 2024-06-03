@@ -12,14 +12,14 @@ const NavBar: React.FC = () => {
 
   return (
     <nav className={styles.navbar}>
-      <ul className={ styles['nav-menu']}>
+     
         <li className={styles['nav-item']}>
-          <Link to="/myTrip" className={styles['nav-links']} onClick={toggleMenu}>Lancer un trip</Link>
+          <Link to="/myTrip" className={styles['nav-links']} onClick={toggleMenu}><span>Lancer un trip</span></Link>
         </li>
         <li className={styles['nav-item']}>
           <Link to="/allTrips" className={styles['nav-links']} onClick={toggleMenu}>Mes voyages</Link>
         </li>
-      </ul>
+  
     </nav>
   );
 };

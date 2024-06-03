@@ -1,22 +1,39 @@
 import React from 'react';
+import StepCard from '../StepCard/StepCard';
+import styles from './Steps.module.css'
 
 interface ImageItem {
   src: string;
   text: string;
+  description:string;
+  number:number;
 }
 
-interface StepsProps {
-  images: ImageItem[];
-}
+const stepsImages : ImageItem[] = [
+  { src:"/directionnalsPicture.jpg",
+    text:"Choisissez vos destinations",
+    description:"directionnal signs",
+    number: 1,
+  },
+  {
+    src:"/mapPicture.jpg",
+    text:"Visualisez votre parcours",
+    description:"map picture",
+    number: 2,
+  },
+  {
+    src:"/mansPicture.jpg",
+    text:"Partagez votre projet !",
+    description:"man picture",
+    number:3,
+  }
+]
 
-const Steps: React.FC<StepsProps> = ({ images }) => {
+const Steps: React.FC = () => {
   return (
-    <div className="horizontal-images">
-      {images.map((image, index) => (
-        <div key={index} className="image-item">
-          <img src={image.src} alt={image.text} />
-          <p>{image.text}</p>
-        </div>
+    <div className={styles.steps_container}>
+      {stepsImages.map((image, index) => (
+        <StepCard key={index} text={image.text} src={image.src} description={image.description} number={image.number}/>
       ))}
     </div>
   );

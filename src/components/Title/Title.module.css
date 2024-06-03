@@ -1,10 +1,10 @@
 
 
 .title{
-    width: 60vw;
+    width: 100vw;
     font-size: 50px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: oblique;
     text-align: center;
     color: #5A6E55 ;
-    border: 2px solid red;
 }

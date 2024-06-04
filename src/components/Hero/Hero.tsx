@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../NavBar/NavBar';
+import HomeNavBar from '../HomeNavBar/HomeNavBar';
 import styles from './Hero.module.css'; 
 
 
@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       <div className={styles.logo_container}> 
         <img className={styles.logo} src='/appLogo.png' alt="app's logo" />
       </div>
-      <NavBar/>
+      <HomeNavBar/>
     </div>
   );
 };

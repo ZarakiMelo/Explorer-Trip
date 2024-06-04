@@ -1,9 +1,9 @@
 
 import { Link } from 'react-router-dom';
-import styles from './NavBar.module.css';  
+import styles from './HomeNavBar.module.css';  
 
 
-const NavBar: React.FC = () => {
+const HomeNavBar: React.FC = () => {
 
   return (
     <nav className={styles.navbar}>
@@ -19,4 +19,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default HomeNavBar;

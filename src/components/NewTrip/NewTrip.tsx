@@ -1,25 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './NewTrip.module.css';
-
-import { Link } from 'react-router-dom';
+import MainNavBar from '../MainNavBar/MainNavBar';
 
 
 const NewTrip: React.FC = () => {
-  
+  const [trip, setTrip] = useState("");
+  const [startDay,setStartDay] = useState("");
+
+
+  const handleSubmit = () => {
+    if(!trip)console.log("Saisir un nom de voyage");
+    else
+    if(!startDay) console.log("Saisir une date de début");
+    else console.log(`${trip} débutera le ${startDay} !`);
+    }
+
   return (
     <div className={styles.container}>
-      <div className={styles.header}> 
-        <img className={styles.logo} src='/appLogo.png' alt="app's logo" />
-        <nav className={styles.nav_container}>
-            <nav className={styles.nav_item}>
-                <Link to="/" className={styles.nav_link} >Accueil</Link>
-            </nav>
-            <nav className={styles.nav_item}>
-                <Link to="/myTrip" className={styles.nav_link} >Mes voyages</Link>
-            </nav>
-        </nav>
-       
-        
+      <MainNavBar />
+      <div className={styles.inputs_container}>
+        <div className={styles.form_container} >
+            <p className={styles.text}>L'aventure s'appelera</p>
+            <input className={styles.input} type="text" value={trip} onChange= {(e)=>{setTrip(e.target.value)}} />
+            <p className={styles.text}>et elle débutera le :</p>
+          
+            <button className={styles.submit_button} type="submit" onClick={handleSubmit}>C'est parti !</button>
+        </div>
       </div>
     </div>
   );

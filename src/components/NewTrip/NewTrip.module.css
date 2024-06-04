@@ -28,8 +28,10 @@
   height: 40px;
   width: 600px;
   border-radius: 10px;
+  border:none;
   background-color: #e0ddda;
   font-size: 20px;
+  color: #5A6E55;
 }
 
 .submit_button{

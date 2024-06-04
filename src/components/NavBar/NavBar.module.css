@@ -14,10 +14,8 @@
   padding: 10px;
   display:flex;
   align-items: center;
-  border-radius: 5px;
-  border-bottom: 1px solid white;
   height: 30px;
-  transition: height 0.3s ease;
+  transition: height 0.5s ease;
 }
   
   .nav-links {
@@ -31,6 +29,7 @@
   .nav-item:hover {
     height: 10px;
     cursor: pointer;
+    border-bottom: 1px solid white;
   }
   
   /* Styles for mobile view */

@@ -29,9 +29,15 @@
   width: 600px;
   border-radius: 10px;
   border:none;
-  background-color: #e0ddda;
   font-size: 20px;
-  color: #5A6E55;
+}
+
+.input, textarea{
+  background-color: #e0ddda;
+}
+
+.input, ::placeholder{
+  padding-left: 10px;
 }
 
 .submit_button{
@@ -43,6 +49,19 @@
   border-radius: 10px;
   color:#e0ddda ;
   background-color: #5A6E55;
+}
+
+.modal_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:center ;
+  height: 200px;
+  width: 400px;
+  border-radius: 20px;
+  border: 2px solid #5A6E55;
+  background-color: #e0ddda;
+  
 }
 
 @media screen and (max-width:900px) {

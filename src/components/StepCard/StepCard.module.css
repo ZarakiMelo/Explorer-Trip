@@ -5,15 +5,12 @@
     justify-content: center;
     height: 90%;
     width: 500px;
-    border:2px solid red
 }
 
 .image{
     height: 400px;
     width: 400px;
     border-radius: 200px;
-    border:2px solid red
-
 }
 
 .text{
@@ -21,12 +18,10 @@
     font-size: 30px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 200px;
-    border:2px solid red
 }
 .number{
     font-size: 60px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border:2px solid red
 }
 
 
@@ -42,7 +37,6 @@
         justify-content: flex-start;
         height: 700px;
         width: 500px;
-        border:2px solid red;
     }
 
  }  

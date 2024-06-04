@@ -1,23 +1,18 @@
-import React, { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';  
 
 
 const NavBar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <nav className={styles.navbar}>
      
         <li className={styles['nav-item']}>
-          <Link to="/myTrip" className={styles['nav-links']} onClick={toggleMenu}><span>Lancer un trip</span></Link>
+          <Link to="/myTrip" className={styles['nav-links']} >Lancer un trip</Link>
         </li>
         <li className={styles['nav-item']}>
-          <Link to="/allTrips" className={styles['nav-links']} onClick={toggleMenu}>Mes voyages</Link>
+          <Link to="/allTrips" className={styles['nav-links']} >Mes voyages</Link>
         </li>
   
     </nav>

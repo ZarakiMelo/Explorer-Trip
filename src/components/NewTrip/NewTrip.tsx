@@ -26,7 +26,7 @@ const NewTrip: React.FC = () => {
     }
   };
   
-  const renderFormattedDate = () => {
+  const formatDate = () => {
     if (!date || date instanceof Array) return "";
     else{
         const options = { day: '2-digit' as const, month: '2-digit' as const, year: 'numeric' as const };
@@ -45,7 +45,7 @@ const NewTrip: React.FC = () => {
         <button className={styles.submit_button} type="submit" onClick={handleSubmit}>C'est parti !</button>
         {submitted && date &&(
           <p className={styles.text}>
-            {renderFormattedDate()}
+            {formatDate()}
           </p>
         )}
       </div>

@@ -6,9 +6,7 @@ import 'react-calendar/dist/Calendar.css';
 import '../../styles/CustomCalendar.css';
 import { ModalContent, NewTripProps } from '../../types';
 import ModalComponent from '../ModalComponent/ModalComponent';
-import { faPen, faCalendar, faStop, faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
-import ModalButton from '../ModalButton/ModalButton';
+import { faPen, faStop, faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 
 

@@ -8,6 +8,7 @@ import { ModalContent, NewTripProps } from '../../types';
 import ModalComponent from '../ModalComponent/ModalComponent';
 import { faPen, faCalendar, faStop, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import ModalButton from '../ModalButton/ModalButton';
 
 
 
@@ -56,12 +57,13 @@ const NewTrip: React.FC<NewTripProps> = (props) => {
 
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{height:trip.state?"600px":"1040px"}}>
       <MainNavBar />
-      <div className={styles.content}>
-        <ModalComponent modal={modal} closeModal={closeModal}></ModalComponent>
+      <ModalComponent modal={modal} closeModal={closeModal}></ModalComponent>
+        
         {!trip.state && (
-          <>
+          <div className={styles.content}>
+          
             <div className={styles.form_container}>
               <div className={styles.input_container}>
                 <input className={styles.input} type="text" value={trip.name} onChange={(e) => handleNameChange(e.target.value)} placeholder="Saisissez un nom pour ce voyage !" maxLength={50} />
@@ -78,16 +80,18 @@ const NewTrip: React.FC<NewTripProps> = (props) => {
               <button className={styles.submit_button} type="submit" onClick={handleSubmit}>Let's go !</button>
             </div>     
             
-          </>
+       </div>
         )}
         {trip.state && (
           <>
-            <h1>{trip.name}</h1>
-            <p>will start on: {formatDate(trip.startDay)} !</p>
+          
+              <p className={styles.text}>{trip.name}</p>
+               <p className={styles.text}>à partir du {formatDate(trip.startDay)}</p>
+       
           </>)
         }
 
-      </div>
+     
     </div>
   );
 };

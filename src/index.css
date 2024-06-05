@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+:root {
+  --primary-color: #5A6E55;
+  --secondary-color: #e0ddda;
+  --font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

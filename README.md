@@ -3,7 +3,9 @@
 
 
  
- <img src="./public/appLogo.png" alt="Application logo">
+  <img src="./public/appLogo.png" alt="Application logo" style={margin-left:300px}>
+
+
 
 
 ExplorerTrip is a web application that allows users to plan road trips in a simple, efficient, and intuitive way. Users can select destinations, modify them, or remove them. They can also visualize their planned route on an interactive map.

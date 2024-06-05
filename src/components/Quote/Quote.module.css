@@ -14,10 +14,10 @@
     margin-left: 10%;
 }
 
-.quote_text{
-    font-size: 30px;
-    font-style: italic;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width:100% ;
-    text-align: center;
-}
+    .quote_text{
+        font-size: 30px;
+        font-style: italic;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        width:100% ;
+        text-align: center;
+    }

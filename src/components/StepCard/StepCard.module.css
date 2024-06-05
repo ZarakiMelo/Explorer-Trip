@@ -7,29 +7,26 @@
     width: 500px;
 }
 
-.image{
-    height: 400px;
-    width: 400px;
-    border-radius: 200px;
-}
+    .image{
+        height: 400px;
+        width: 400px;
+        border-radius: 200px;
+    }
 
-.text{
-    text-align: center;
-    font-size: 30px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 200px;
-}
-.number{
-    font-size: 60px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+    .text{
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        width: 200px;
+    }
+    .number{
+        font-size: 60px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
 
 
  /* Styles for mobile view */
  @media screen and (max-width: 950px) {
-    .number{
-        margin-top: -20px;
-    }
     .card{
         display: flex;
         flex-direction: column;
@@ -38,7 +35,9 @@
         height: 700px;
         width: 500px;
     }
-
+    .number{
+            margin-top: -20px;
+        }
  }  
  @media (min-width:951px) and (max-width: 1500px) {
     .image{

@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom'
 const MainNavBar = () => {
   return (
     <div className={styles.header}> 
-        <img className={styles.logo} src='/appLogo.png' alt="app's logo" />
+        <Link to="/" className={styles.logo_container}>
+          <img className={styles.logo} src='/appLogo.png' alt="app's logo" />
+        </Link>
         <nav className={styles.nav_container}>
-            <nav className={styles.nav_item}>
-                <Link to="/" className={styles.nav_link} >Accueil</Link>
-            </nav>
             <nav className={styles.nav_item}>
                 <Link to="/myTripPage" className={styles.nav_link} >Mes voyages</Link>
             </nav>

@@ -1,11 +1,7 @@
 import React from 'react';
 import styles from '../Quote/Quote.module.css';
+import { QuoteProps } from '../../types';
 
-interface QuoteProps {
-  text: string;
-  author: string;
-  position: 'left' | 'right';
-}
 
 const Quote: React.FC<QuoteProps> = ({ text, author, position }) => {
   const containerClass =

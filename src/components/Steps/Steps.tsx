@@ -1,13 +1,9 @@
 import React from 'react';
 import StepCard from '../StepCard/StepCard';
-import styles from './Steps.module.css'
+import styles from './Steps.module.css';
+import { ImageItem } from '../../types';
 
-interface ImageItem {
-  src: string;
-  text: string;
-  description:string;
-  number:number;
-}
+
 
 const stepsImages : ImageItem[] = [
   { src:"/directionnalsPicture.jpg",

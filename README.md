@@ -10,6 +10,9 @@ ExplorerTrip is a web application that allows users to plan road trips in a simp
 
 
 <img src="./public/verdantLandScapePicture.jpg" alt="verdantLandScapePicture" height="500px">
+
+
+
 ## Features
 
 - Create a new road trip by providing a name and departure date.

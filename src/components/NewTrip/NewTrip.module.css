@@ -36,7 +36,7 @@
   padding-left: 10px;
   }
 
- .submit_button{
+.submit_button{
     height: 60px;
     width: 400px;
     margin-top: 80px;
@@ -47,6 +47,41 @@
     background-color: #5A6E55;
    }
 
+/*---CALENDAR---*/
+
+.calendar_container{
+  height:300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:center;
+}
+.calendar_window{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
+}
+.calendar-closed {
+  max-height: 0;
+}
+
+.calendar-open {
+  max-height: 400px; 
+}
+.window_button{
+  height: 20px;
+  width: 200px;
+  background-color: #5A6E55;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  color: #e0ddda;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+ 
 
 @media screen and (max-width:900px) {
   .input{
@@ -54,5 +89,7 @@
   }
   .text{
     font-size: 40px;
+    width: 500px;
+    text-align: center;
   }
 }

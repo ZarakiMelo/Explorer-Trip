@@ -7,38 +7,9 @@ import '../../styles/CustomCalendar.css';
 import Modal from 'react-modal';
 import ModalButton from '../ModalButton/ModalButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { ModalContent, NewTripProps } from '../../types';
 
-/**
- * Represents a fragment of a value for a date.
- */
-type ValuePiece = Date | null;
-
-/**
- * Represents a value for a date, which can be either a complete date or a pair of date values (start and end).
- */
-type Value = ValuePiece | [ValuePiece, ValuePiece];
-
-/**
- * Represents the content of a modal.
- */
-type ModalContent = {
-  /** State of the modal */
-  state: boolean,
-  /** Message to be displayed in the modal */
-  message: string
-}
-
-/**
- * Represents a trip.
- */
-type Trip = {
-  /** State of the trip */
-  state: boolean,
-  /** Name of the trip */
-  name: string,
-  /** Start date of the trip */
-  startDay: Value,
-}
 
 /**
  * Custom styles for the modal.
@@ -47,7 +18,7 @@ const customStyles: Modal.Styles = {
   content: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "flex-start",
     alignItems: "center",
     height: "200px",
     width: "400px",
@@ -66,30 +37,20 @@ const customStyles: Modal.Styles = {
   },
 };
 
+
 /**
  * Main component for creating a new trip.
  */
-const NewTrip: React.FC = () => {
-  const [trip, setTrip] = useState<Trip>({
-    state: false,
-    name: "",
-    startDay: new Date(),
-  });
+const NewTrip: React.FC<NewTripProps> = ({trip,handleNameChange,handleStartDayChange,handleChangeState,formatDate}) => {
   const [calendarOpen, setCalendarOpen] = useState<boolean>(false);
   const [modal, setModal] = useState<ModalContent>({ state: false, message: "" });
 
-  // Modal functions
-  /**
-   * Opens the modal with a specified message.
-   * @param message - Message to be displayed in the modal.
-   */
+  
   const openModal = (message: string) => {
     setModal({ state: true, message })
   }
 
-  /**
-   * Closes the modal.
-   */
+
   const closeModal = () => { setModal({ state: false, message: "" }) }
 
   // User inputs verification
@@ -99,7 +60,7 @@ const NewTrip: React.FC = () => {
    */
   const handleSubmit = () => {
     if (!validateTrip()) return;
-    setTrip({ ...trip, state: true });
+   handleChangeState(trip.state);
     openModal("Voyage créé !!!!")
   };
 
@@ -122,32 +83,7 @@ const NewTrip: React.FC = () => {
     return true;
   };
 
-  /**
-   * Handles the change of trip name based on user input.
-   * @param name - New trip name.
-   */
-  const handleNameChange = (name: string) => {
-    setTrip({ ...trip, name })
-  }
 
-  /**
-   * Handles the change of trip start date based on user selection.
-   * @param startDay - New start date of the trip.
-   */
-  const handleStartDayChange = (startDay: Value) => {
-    setTrip({ ...trip, startDay })
-  }
-
-  /**
-   * Formats a date into a string in "dd/MM/YYYY" format.
-   * @param date - Date to format.
-   * @returns Formatted date as a string.
-   */
-  const formatDate = (date: Value) => {
-    if (!date || date instanceof Array) return "";
-    const options = { day: '2-digit' as const, month: '2-digit' as const, year: 'numeric' as const };
-    return date.toLocaleDateString('fr-FR', options);
-  };
 
   return (
     <div className={styles.container}>
@@ -160,12 +96,15 @@ const NewTrip: React.FC = () => {
           contentLabel="Example Modal"
           shouldCloseOnOverlayClick={false}
         >
+          <div className={styles.close_container}>
+            <button className={styles.close_button} type='button' onClick={closeModal}>X</button>
+          </div>
           <div className={styles.modal_message_container}>
-              <FontAwesomeIcon  className={styles.icon} icon={"cross"}></FontAwesomeIcon>
+              <FontAwesomeIcon  className={styles.icon} icon={faPen}></FontAwesomeIcon>
              <p>{modal.message}</p>
           </div>
          
-          <ModalButton action={closeModal} text="Compris" color="#5A6E55"></ModalButton>
+          {/*<ModalButton action={} text="Compris" color="#5A6E55"></ModalButton>*/}
         </Modal>
 
         {!trip.state && (

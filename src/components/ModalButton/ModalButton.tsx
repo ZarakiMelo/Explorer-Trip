@@ -1,11 +1,7 @@
 import React from 'react';
-import styles from './ModalButton.module.css'
+import styles from './ModalButton.module.css';
+import { ModalButtonProps } from '../../types';
 
-interface ModalButtonProps {
-    color : string,
-   text : string,
-   action : () => void,
-}
 
 const ModalButton : React.FC<ModalButtonProps> = ({color,text,action}) => {
 

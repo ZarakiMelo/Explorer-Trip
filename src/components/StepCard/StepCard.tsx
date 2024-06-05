@@ -1,14 +1,10 @@
 import React from 'react';
 import styles from './StepCard.module.css';
+import { StepCardProps } from '../../types';
 
-interface StepProps {
-    src: string;
-    text:string;
-    description:string;
-    number:number;
-}
 
-const StepCard: React.FC<StepProps> = ({ text, src,description, number  }) => {
+
+const StepCard: React.FC<StepCardProps> = ({ text, src,description, number  }) => {
   
   return (
     <div className={styles.card}>

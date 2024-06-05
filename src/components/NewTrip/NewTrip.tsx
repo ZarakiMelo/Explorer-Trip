@@ -6,6 +6,7 @@ import 'react-calendar/dist/Calendar.css';
 import '../../styles/CustomCalendar.css';
 import Modal from 'react-modal';
 import ModalButton from '../ModalButton/ModalButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /**
  * Represents a fragment of a value for a date.
@@ -159,7 +160,11 @@ const NewTrip: React.FC = () => {
           contentLabel="Example Modal"
           shouldCloseOnOverlayClick={false}
         >
-          <p>{modal.message}</p>
+          <div className={styles.modal_message_container}>
+              <FontAwesomeIcon  className={styles.icon} icon={"cross"}></FontAwesomeIcon>
+             <p>{modal.message}</p>
+          </div>
+         
           <ModalButton action={closeModal} text="Compris" color="#5A6E55"></ModalButton>
         </Modal>
 

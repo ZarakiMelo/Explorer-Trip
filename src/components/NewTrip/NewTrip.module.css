@@ -82,6 +82,17 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
  
+/*---MODAL---*/
+
+.modal_message_container{
+  display: flex;
+  height: 100px;
+}
+
+.icon{
+  color: red;
+  height: 10px;
+}
 
 @media screen and (max-width:900px) {
   .input{

@@ -3,6 +3,12 @@
     width: 200px;
     font-size: 30px;
     border-radius: 10px;
+    outline: none;
     color: #e0ddda;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+.button:hover{
+    background-color: #e0ddda;
+    color: #5A6E55 ;
 }

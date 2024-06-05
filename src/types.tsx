@@ -19,7 +19,8 @@ export type ModalContent = {
   type : string,
   state: boolean,
   message: string,
-  icon : FontAwesomeIconProps | null,
+  icon : any,
+  iconColor : string,
 };
 
 /**
@@ -88,5 +89,4 @@ export interface StepCardProps {
 export interface ModalComponentProps{
   modal:ModalContent,
   closeModal : () => void,
-  children : never[],
 }

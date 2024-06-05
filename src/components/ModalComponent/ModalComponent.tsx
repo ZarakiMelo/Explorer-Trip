@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {  ModalComponentProps} from '../../types';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -29,8 +29,10 @@ const customStyles: Modal.Styles = {
   };
 
 const ModalComponent:React.FC<ModalComponentProps> = ({closeModal,modal})=> {
-
-
+useEffect(()=>{
+  console.log({"Construction du composant - State":modal.state})
+},[])
+console.log({"State":modal.state})
   return (
     <Modal
     isOpen={modal.state}
@@ -43,8 +45,8 @@ const ModalComponent:React.FC<ModalComponentProps> = ({closeModal,modal})=> {
       <button className={styles.close_button} type='button' onClick={closeModal}>X</button>
     </div>
     <div className={styles.modal_message_container}>
-        <FontAwesomeIcon  className={styles.icon} icon={faPen}></FontAwesomeIcon>
-       <p>{modal.message}</p>
+        <FontAwesomeIcon  className={modal.iconColor=="#845A5A"?styles.icon_reject:styles.icon_valid} icon={modal.icon}></FontAwesomeIcon>
+       <p className={styles.message}>{modal.message}</p>
     </div>
    
     {/*<ModalButton action={} text="Compris" color="#5A6E55"></ModalButton>*/}

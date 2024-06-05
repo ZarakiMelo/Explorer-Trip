@@ -74,6 +74,7 @@ const NewTrip: React.FC = () => {
     name: "",
     startDay: new Date(),
   });
+  const [calendarOpen, setCalendarOpen] = useState<boolean>(false);
   const [modal, setModal] = useState<ModalContent>({ state: false, message: "" });
 
   // Modal functions
@@ -144,7 +145,7 @@ const NewTrip: React.FC = () => {
   const formatDate = (date: Value) => {
     if (!date || date instanceof Array) return "";
     const options = { day: '2-digit' as const, month: '2-digit' as const, year: 'numeric' as const };
-    return date.toLocaleDateString('en-US', options);
+    return date.toLocaleDateString('fr-FR', options);
   };
 
   return (
@@ -167,7 +168,14 @@ const NewTrip: React.FC = () => {
             <p className={styles.text}>L'aventure s'appelera :</p>
             <input className={styles.input} type="text" value={trip.name} onChange={(e) => handleNameChange(e.target.value)} placeholder="Nom du voyage" maxLength={50} />
             <p className={styles.text}>et elle commencera le : {formatDate(trip.startDay)}</p>
-            <Calendar onChange={handleStartDayChange} value={trip.startDay} minDate={new Date()} />
+            <div className={styles.calendar_container}>
+               <button className={styles.window_button} type='button' onClick={()=>{setCalendarOpen(!calendarOpen)}}> {calendarOpen ? 'Fermer' : 'Choisir une date'}</button>
+              <div className={`${styles.calendar_window} ${calendarOpen ? 'calendar-open' : 'calendar-closed'}`}>
+              <Calendar onChange={handleStartDayChange} value={trip.startDay} minDate={new Date()} />
+              </div>
+             
+            </div>
+            
             <button className={styles.submit_button} type="submit" onClick={handleSubmit}>Let's go !</button>
           </>
         )}

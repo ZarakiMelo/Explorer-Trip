@@ -18,3 +18,15 @@
 .react-calendar__tile--active:enabled:focus {
   background: #5A6E55;
 }
+.calendar-window {
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.calendar-closed {
+  max-height: 0;
+}
+
+.calendar-open {
+  max-height: 400px; /* Adjust according to the height of your calendar */
+}

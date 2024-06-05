@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const GetNewTrip: React.FC= () => {
   return (
     <div className={styles.container}>
-          <Link to="/myTrip" className={styles.link} > <div className={styles.nav}>Organiser un nouveau voyage</div></Link>
+          <Link to="/myTripPage" className={styles.link} > <div className={styles.nav}>Organiser un nouveau voyage</div></Link>
     </div>
   );
 };

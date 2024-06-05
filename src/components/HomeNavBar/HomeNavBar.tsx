@@ -9,10 +9,10 @@ const HomeNavBar: React.FC = () => {
     <nav className={styles.navbar}>
      
         <li className={styles['nav-item']}>
-          <Link to="/myTrip" className={styles['nav-links']} >Lancer un trip</Link>
+          <Link to="/myTripPage" className={styles['nav-links']} >Lancer un trip</Link>
         </li>
         <li className={styles['nav-item']}>
-          <Link to="/allTrips" className={styles['nav-links']} >Mes voyages</Link>
+          <Link to="/" className={styles['nav-links']} >Mes voyages</Link>
         </li>
   
     </nav>

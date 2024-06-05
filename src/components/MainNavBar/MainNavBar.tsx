@@ -11,7 +11,7 @@ const MainNavBar = () => {
                 <Link to="/" className={styles.nav_link} >Accueil</Link>
             </nav>
             <nav className={styles.nav_item}>
-                <Link to="/myTrip" className={styles.nav_link} >Mes voyages</Link>
+                <Link to="/myTripPage" className={styles.nav_link} >Mes voyages</Link>
             </nav>
         </nav>
       </div>

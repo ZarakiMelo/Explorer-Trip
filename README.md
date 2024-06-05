@@ -3,7 +3,7 @@
 
 
  
-  <img src="./public/appLogo.png" alt="Application logo" style={margin-left:300px}>
+  <img src="./public/appLogo.png" alt="Application logo" style="margin-left:300px">
 
 
 

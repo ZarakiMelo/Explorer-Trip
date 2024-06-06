@@ -3,6 +3,8 @@ import styles from './AddDestination.module.css';
 import Title from '../Title/Title';
 import { Location } from '../../types';
 import GooglePlacesAutocomplete,{ geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
+import { AddDestinationProps, Coordinates } from '../../types';
+import ConfirmCancelButton from '../ModalButton/ConfirmCancelButton';
 
 const customStyles = {
     container :(provided: any) => ({
@@ -33,13 +35,6 @@ const customStyles = {
 };
 
 
-interface AddDestinationProps{
-handleAddLocation : (location:Location) => void
-}
-type Coordinates = {
-    lat:number | null,
-    lng:number | null,
-}
 const AddDestination: React.FC<AddDestinationProps> = (handleAddLocation) => {
     const title = "Choisissez votre destination";
     const [value, setValue] = useState<any>(null);
@@ -79,7 +74,6 @@ const AddDestination: React.FC<AddDestinationProps> = (handleAddLocation) => {
         setCoordinate({lat:null,lng:null});
         setNumberOfDay("");
     }
-    console.log({"coordinates":coordinates})
 
     return (
         <div className={styles.container}>
@@ -102,8 +96,12 @@ const AddDestination: React.FC<AddDestinationProps> = (handleAddLocation) => {
                          </div>
                      </div>
                      <div className={styles.buttons_container}>
-                         <button onClick={handleSubmit}type='button'>Valider</button>
-                         <button onClick={resetInputs} type='button'>Annuler</button>
+                        <div className={styles.confirmButton_container}>
+                            <ConfirmCancelButton action={handleSubmit} color={1} text="Valider"/>
+                        </div>
+                        <div className={styles.cancelButton_container}>
+                            <ConfirmCancelButton action={resetInputs} color={3} text="Annuler"/>
+                        </div>
                      </div>
        </div>
      

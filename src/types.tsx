@@ -53,8 +53,13 @@ export interface ImageItem {
   description:string,
   number:number,
 }
-
-
+/**
+ * Represent a Coordinate Object.
+ */
+export type Coordinates = {
+  lat:number | null,
+  lng:number | null,
+}
 
 ////////////////////////INTERFACES////////////////////
 
@@ -79,8 +84,8 @@ export interface NewTripProps {
 /**
  * Propriétés pour le composant ModalButton.
  */
-export interface ModalButtonProps {
-  color : string,
+export interface ConfirmCancelButtonProps {
+  color : number,
  text : string,
  action : () => void,
 }
@@ -102,3 +107,9 @@ export interface ModalComponentProps{
   modal:ModalContent,
   closeModal : () => void,
 }
+/**
+ * Propriétés pour le composant AddDestination.
+ */
+export interface AddDestinationProps{
+  handleAddLocation : (location:Location) => void
+  } 

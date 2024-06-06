@@ -30,17 +30,26 @@
 
 .buttons_container{
     border: 2px solid green;
-    height: 100px;
+    height: 200px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     margin-top: 50px;
-  
+}
+.confirmButton_container{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+.cancelButton_container{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
 }
 
-button{
-    height: 40px;
-    width: 250px;
-    border-radius: 10px;
-}
+@media (max-width: 1300px) {
+    .inputs_container{
+        flex-direction: column;
+    }
+  }

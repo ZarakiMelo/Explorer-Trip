@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MyTripPage.module.css';
 import NewTrip from '../../components/NewTrip/NewTrip';
-import { Trip, Value } from '../../types';
+import { Trip, Value,Location } from '../../types';
 import AddDestination from '../../components/AddDestination/AddDestination';
 import Mapp from '../../components/Mapp/Mapp';
 
@@ -43,6 +43,11 @@ const MyTripPage: React.FC = () => {
     setTrip((prevTrip) => ({ ...prevTrip, state: !state }));
   };
 
+  const handleAddLocation = (location : Location) => {
+    const newLocations = trip.locations;
+    newLocations.push(location);
+    setTrip((prevTrip) => ({...prevTrip, locations:newLocations}))
+  }
   /**
    * Formats a date into a string in "dd/MM/YYYY" format.
    * @param date - Date to format.
@@ -53,7 +58,7 @@ const MyTripPage: React.FC = () => {
     const options = { day: '2-digit' as const, month: '2-digit' as const, year: 'numeric' as const };
     return date.toLocaleDateString('fr-FR', options);
   };
-
+  console.log({"Trip in MyTripPage":trip});
   return (
     <div className={styles.container}>
     <NewTrip 
@@ -63,7 +68,7 @@ const MyTripPage: React.FC = () => {
         formatDate={formatDate} 
         handleChangeState={handleChangeState}
   />
-      <AddDestination/>
+      <AddDestination handleAddLocation={handleAddLocation}/>
       <Mapp/>
     
     </div>

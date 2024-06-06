@@ -26,11 +26,23 @@ export type ModalContent = {
 /**
  * Represent a trip.
  */
+export type Location ={
+  lat : number,
+  long:number,
+  numberOfDay:number,
+}
+
+/**
+ * Represent a trip.
+ */
 export type Trip = {
   state: boolean,
   name: string,
   startDay: Value,
+  locations:Location[],
+
 };
+
 
 /**
  * Represent a Image content.

@@ -12,7 +12,7 @@ code {
     monospace;
 }
 :root {
-  --primary-color: #5A6E55;
-  --secondary-color: #e0ddda;
-  --font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --color1: #5A6E55;
+  --color2: #e0ddda;
+  --family1: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

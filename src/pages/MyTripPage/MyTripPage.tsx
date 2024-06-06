@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './MyTripPage.module.css';
 import NewTrip from '../../components/NewTrip/NewTrip';
 import { Trip, Value } from '../../types';
+import AddDestination from '../../components/AddDestination/AddDestination';
 
 const MyTripPage: React.FC = () => {
   const [trip, setTrip] = useState<Trip>(() => {
@@ -61,6 +62,7 @@ const MyTripPage: React.FC = () => {
         formatDate={formatDate} 
         handleChangeState={handleChangeState}
       />
+      <AddDestination/>
     </div>
   );
 };

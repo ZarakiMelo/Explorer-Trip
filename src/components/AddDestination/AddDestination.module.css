@@ -1,0 +1,43 @@
+.container{
+   
+}
+
+.inputs_container{
+    width: 100vw;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 700px;
+    border: 2px solid blue;
+}
+
+input{
+    width: 450px;
+    height: 30px;
+    background-color: var(--color2);
+    border-radius: 10px;
+    border-color: var(--color1);
+}
+
+.input_name{
+    font-size: 20px;
+}
+
+.buttons_container{
+    border: 2px solid green;
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    height: 50px;
+    width: 100px;
+}

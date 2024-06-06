@@ -1,12 +1,9 @@
-.container{
-   
-}
 
 .inputs_container{
     width: 100vw;
     border: 2px solid red;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
@@ -15,29 +12,35 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 700px;
+    width: 600px;
+    height: 200px;
     border: 2px solid blue;
 }
 
-input{
+.input_duration{
     width: 450px;
-    height: 30px;
-    background-color: var(--color2);
+    height: 35px;
     border-radius: 10px;
-    border-color: var(--color1);
-}
+    border:3px solid var(--color1)
+    }
 
-.input_name{
+.input_title{
     font-size: 20px;
 }
 
 .buttons_container{
     border: 2px solid green;
+    height: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+  
 }
 
 button{
-    height: 50px;
-    width: 100px;
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
 }

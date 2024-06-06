@@ -3,6 +3,7 @@ import styles from './MyTripPage.module.css';
 import NewTrip from '../../components/NewTrip/NewTrip';
 import { Trip, Value } from '../../types';
 import AddDestination from '../../components/AddDestination/AddDestination';
+import Mapp from '../../components/Mapp/Mapp';
 
 const MyTripPage: React.FC = () => {
   const [trip, setTrip] = useState<Trip>(() => {
@@ -55,14 +56,16 @@ const MyTripPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <NewTrip 
+    <NewTrip 
         trip={trip} 
         handleNameChange={handleNameChange} 
         handleStartDayChange={handleStartDayChange} 
         formatDate={formatDate} 
         handleChangeState={handleChangeState}
-      />
+  />
       <AddDestination/>
+      <Mapp/>
+    
     </div>
   );
 };

@@ -4,6 +4,8 @@ import NewTrip from '../../components/NewTrip/NewTrip';
 import { Trip, Value,Location } from '../../types';
 import AddDestination from '../../components/AddDestination/AddDestination';
 import Mapp from '../../components/Mapp/Mapp';
+import DeleteTrip from '../../components/DeleteTrip/DeleteTrip';
+import Divider from '../../components/Divider/Divider';
 
 const MyTripPage: React.FC = () => {
   const [trip, setTrip] = useState<Trip>(() => {
@@ -16,10 +18,10 @@ const MyTripPage: React.FC = () => {
           startDay: parsedTrip.startDay ? new Date(parsedTrip.startDay) : new Date(),
         };
       }
-      return { state: false, name: "", startDay: new Date() };
+      return { state: false, name: "", startDay: new Date() ,locations:[]};
     } catch (error) {
       console.error("Error parsing localStorage item 'trip':", error);
-      return { state: false, name: "", startDay: new Date() };
+      return { state: false, name: "", startDay: new Date() ,locations:[]};
     }
   });
 
@@ -43,10 +45,15 @@ const MyTripPage: React.FC = () => {
     setTrip((prevTrip) => ({ ...prevTrip, state: !state }));
   };
 
-  const handleAddLocation = (location : Location) => {
-    const newLocations = trip.locations;
-    newLocations.push(location);
-    setTrip((prevTrip) => ({...prevTrip, locations:newLocations}))
+  const handleAddLocation = (location: Location) => {
+    setTrip((prevTrip) => ({
+      ...prevTrip,
+      locations: [...prevTrip.locations, location]
+    }));
+  };
+
+  const handleDeleteTrip = ()=>{
+    setTrip((prevTrip) => ({ state: false, name: "", startDay: new Date(),locations:[] }));
   }
   /**
    * Formats a date into a string in "dd/MM/YYYY" format.
@@ -68,9 +75,13 @@ const MyTripPage: React.FC = () => {
         formatDate={formatDate} 
         handleChangeState={handleChangeState}
   />
+      {trip.state && (<>
       <AddDestination handleAddLocation={handleAddLocation}/>
+      <Divider/>
       <Mapp/>
-    
+      <Divider/>
+      <DeleteTrip handleDeleteTrip={handleDeleteTrip}/>
+      </>)}
     </div>
   );
 };

@@ -1,0 +1,6 @@
+button{
+    width: 200px;
+    height: 100px;
+    background-color: var(--color3);
+    color:var(--color2)
+}

@@ -1,7 +1,6 @@
 import React, {useState}from 'react';
 import styles from './AddDestination.module.css';
 import Title from '../Title/Title';
-import { Location } from '../../types';
 import GooglePlacesAutocomplete,{ geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
 import { AddDestinationProps, Coordinates } from '../../types';
 import ConfirmCancelButton from '../ModalButton/ConfirmCancelButton';
@@ -35,7 +34,7 @@ const customStyles = {
 };
 
 
-const AddDestination: React.FC<AddDestinationProps> = (handleAddLocation) => {
+const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation}) => {
     const title = "Choisissez votre destination";
     const [value, setValue] = useState<any>(null);
     const [coordinates, setCoordinate]=useState<Coordinates>({ lat: null,
@@ -56,7 +55,8 @@ const AddDestination: React.FC<AddDestinationProps> = (handleAddLocation) => {
     const handleSubmit=()=> {
         if(!validateDestination())return;
         const newLocation = {...coordinates,numberOfDay:Number(numberOfDay)};
-        console.log({"nouvelle destination":newLocation})
+        console.log(typeof(newLocation));
+        handleAddLocation(newLocation);
     }
     const validateDestination = () => {
         if (!coordinates.lat || !coordinates.lng) {

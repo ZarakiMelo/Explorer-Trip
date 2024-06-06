@@ -22,14 +22,21 @@ export type ModalContent = {
   icon : any,
   iconColor : string,
 };
+/**
+ * Represent a Coordinate Object.
+ */
+export type Coordinates = {
+  lat:number | null,
+  lng:number | null,
+}
 
 /**
  * Represent a trip.
  */
 export type Location ={
-  lat : number,
-  long:number,
-  numberOfDay:number,
+  lat:number | null,
+  lng:number | null,
+  numberOfDay:number|null,
 }
 
 /**
@@ -53,13 +60,7 @@ export interface ImageItem {
   description:string,
   number:number,
 }
-/**
- * Represent a Coordinate Object.
- */
-export type Coordinates = {
-  lat:number | null,
-  lng:number | null,
-}
+
 
 ////////////////////////INTERFACES////////////////////
 
@@ -111,5 +112,12 @@ export interface ModalComponentProps{
  * Propriétés pour le composant AddDestination.
  */
 export interface AddDestinationProps{
-  handleAddLocation : (location:Location) => void
+  handleAddLocation : (location:Location) => void,
+  } 
+
+  /**
+ * Propriétés pour le composant DeleteTrip.
+ */
+export interface DeleteTripProps{
+  handleDeleteTrip : () => void,
   } 

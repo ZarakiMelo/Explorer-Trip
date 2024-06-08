@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MyTripPage.module.css';
 import NewTrip from '../../components/NewTrip/NewTrip';
-import { Trip, Value,Location } from '../../types';
+import { Trip, Value,Location, ValuePiece } from '../../types';
 import AddDestination from '../../components/AddDestination/AddDestination';
 import Mapp from '../../components/Mapp/Mapp';
 import DeleteTrip from '../../components/DeleteTrip/DeleteTrip';
 import Divider from '../../components/Divider/Divider';
+import AllDestinationsList from '../../components/AllDestinationsList/AllDestinationsList';
 
 const MyTripPage: React.FC = () => {
   const [trip, setTrip] = useState<Trip>(() => {
@@ -76,7 +77,9 @@ const MyTripPage: React.FC = () => {
         handleChangeState={handleChangeState}
   />
       {trip.state && (<>
-      <AddDestination handleAddLocation={handleAddLocation}/>
+      <AddDestination handleAddLocation={handleAddLocation} trip={trip}/>
+      <Divider/>
+      <AllDestinationsList allDestinations={trip.locations}/>
       <Divider/>
       <Mapp/>
       <Divider/>

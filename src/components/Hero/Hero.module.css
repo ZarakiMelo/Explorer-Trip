@@ -11,12 +11,18 @@
   }
 
   .logo_container{
-    height: 45%;
-    width: auto;
-    margin-top: 5%;
+    height: 40%;
+    width: 300px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 100px;
+
+
+
+    border: 1px solid red;
   }
 
   .logo{
-    height: 100%;
+    width: 100%;
   }
 

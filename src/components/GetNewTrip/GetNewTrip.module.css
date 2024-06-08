@@ -27,7 +27,7 @@
   
   .link{
     color: #fff;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:var(--f1);
     font-size: 40px;
     font-style: italic;
     text-decoration: none;

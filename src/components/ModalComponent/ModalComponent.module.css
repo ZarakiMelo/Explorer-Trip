@@ -15,7 +15,7 @@
     background-color: #5A6E55;
     color: #e0ddda;
     font-size: 8px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: var(--f1);
   }
   .close_button:active,
 .close_button:focus {
@@ -46,6 +46,6 @@
     font-size: 20px;
     text-align: center;
     color:black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
+    font-family: var(--f1);
+
   }

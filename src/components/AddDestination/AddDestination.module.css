@@ -1,38 +1,117 @@
-
-.inputs_container{
+.container{
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     border: 1px solid rgb(15, 15, 15);
+}
+
+.window_button{
+    height: 60px;
+    width: 600px;
+    background-color: #5A6E55;
+    border:none;
+    border-radius: 10px;
+    font-size: 40px;
+    color: #e0ddda;
+    font-family: var(--f1);
+  }
+.open_button_container{
+    width: 100vw;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid rgb(222, 59, 59);
 }
 
-.input_container {
+.main_container{
+    width: 100vw;
+    height: 700px;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    width: 600px;
-    height: 100px;
-    margin: 50px;
+    border: 1px solid black;
+}
+.inputs_container{
+    height: 450px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+border: 1px solid red;
 }
 
-.input_duration{
-    width: 450px;
-    height: 35px;
-    border-radius: 10px;
-    border:3px solid var(--color1);
-    font-size: 16px;
+
+  
+/**IMAGE**/
+.img_container{
+width: 50%;
+height: 450px;
+display: flex;
+justify-content: center;
+
+border: 1px solid red;
+}
+img{
+    width: 650px;
+}
+
+
+/**INPUTS**/
+.name_input_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    border: 1px solid blue;
 }
 
 .input_title{
     font-size: 20px;
+    margin-right: 20px;
+    font-family: var(--f1);
 }
 
+.input_duration{
+    width: 50px;
+    height: 35px;
+    border-radius: 10px;
+    border:3px solid var(--color1);
+    font-size: 20px;
+    font-family: var(--f1);
+}
+
+.duration_input_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+.duration_unit{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.divider{
+    width: 100%;
+    border:1px solid var(--color1)
+}
+
+.calendar_container{
+    display: flex;
+    justify-content: center;
+  }
+
+/***BUTTONS***/
 .buttons_container{
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+  
 }
 .confirmButton_container{
     width: 50%;
@@ -46,8 +125,32 @@
     justify-content: flex-start;
 }
 
+
+
+
+
 @media (max-width: 1300px) {
-    .inputs_container{
+    .main_container{
         flex-direction: column;
+        align-items: center;
+    }
+    img{
+        width: 300px;
+    }
+       .img_container{
+        width: 100%;
+        align-items: center;
+        height: 250px;
+
+    }
+    .inputs_container{
+        align-items: center;
+        justify-content: center;
+        width: 600px;
+        height: 400px;
+    }
+ 
+    .buttons_container{
+        height: 100px;
     }
   }

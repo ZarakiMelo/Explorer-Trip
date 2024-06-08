@@ -53,7 +53,7 @@
     width: 400px;
     margin-bottom: 150px;
     font-size: 30px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: var(--family);
      border-radius: 10px;
      border: none;
     color:#e0ddda ;
@@ -84,6 +84,7 @@
   transition: max-height 0.5s ease-in-out;
   overflow: hidden;
 }
+
 .calendar-closed {
   max-height: 0;
 }
@@ -100,14 +101,14 @@
   margin-bottom: 10px;
   font-size: 25px;
   color: #e0ddda;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: var(--f1);
 }
 
 
 
 .text{
-  font-size: 60px;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 70px;
+  font-family:var(--f1);
   color:#e0ddda;
   text-align: center;
 }
@@ -120,8 +121,7 @@
     width: 400px;
   }
   .text{
-    font-size: 40px;
-    width: 500px;
+    font-size: 45px;
     text-align: center;
   }
 }

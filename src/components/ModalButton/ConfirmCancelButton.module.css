@@ -5,6 +5,7 @@
     border-radius: 10px;
     outline: none;
     color: #e0ddda;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-family:var(--f1);
+   
 }
 

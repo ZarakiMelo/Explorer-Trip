@@ -8,20 +8,14 @@ import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 export type ValuePiece = Date | null;
 
 /**
- * Represents a date value, which can be either a complete date or a pair of date values (start and end).
+ * Represents a date value, which can be either a complete date .
  */
-export type Value = ValuePiece | [ValuePiece, ValuePiece];
+export type Value =  ValuePiece| [ValuePiece, ValuePiece] ;
 
 /**
- * Represent a modal content.
+ * Represents a pair of date values (start and end).
  */
-export type ModalContent = {
-  type : string,
-  state: boolean,
-  message: string,
-  icon : any,
-  iconColor : string,
-};
+export type Values = Value ;
 /**
  * Represent a Coordinate Object.
  */
@@ -31,12 +25,13 @@ export type Coordinates = {
 }
 
 /**
- * Represent a trip.
+ * Represent a location.
  */
 export type Location ={
   lat:number | null,
   lng:number | null,
-  numberOfDay:number|null,
+  dates : Value,
+  name:string,
 }
 
 /**
@@ -47,7 +42,6 @@ export type Trip = {
   name: string,
   startDay: Value,
   locations:Location[],
-
 };
 
 
@@ -61,7 +55,16 @@ export interface ImageItem {
   number:number,
 }
 
-
+/**
+ * Represent a modal content.
+ */
+export type ModalContent = {
+  type : string,
+  state: boolean,
+  message: string,
+  icon : any,
+  iconColor : string,
+};
 ////////////////////////INTERFACES////////////////////
 
 /**
@@ -113,6 +116,7 @@ export interface ModalComponentProps{
  */
 export interface AddDestinationProps{
   handleAddLocation : (location:Location) => void,
+  trip : Trip,
   } 
 
   /**

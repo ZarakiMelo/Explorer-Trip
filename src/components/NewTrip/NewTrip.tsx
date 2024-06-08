@@ -72,7 +72,8 @@ const NewTrip: React.FC<NewTripProps> = (props) => {
               <div className={styles.calendar_container}>
                 <button className={styles.window_button} type='button' onClick={()=>{setCalendarOpen(!calendarOpen)}}> {calendarOpen ? 'Fermer' : 'Choisir une date'}</button>
                 <div className={`${styles.calendar_window} ${calendarOpen ? 'calendar-open' : 'calendar-closed'}`}>
-                <Calendar onChange={handleStartDayChange} value={trip.startDay} minDate={new Date()} locale="fr"
+                <Calendar onChange={handleStartDayChange} value={trip.startDay} minDate={new Date()} locale="fr" selectRange={false}
+
         formatShortWeekday={(locale, date) => format(date, 'EEEEEE', { locale: fr })}
         formatMonth={(locale, date) => format(date, 'LLLL', { locale: fr })}
         formatMonthYear={(locale, date) => format(date, 'LLLL yyyy', { locale: fr })}/>

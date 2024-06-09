@@ -16,7 +16,7 @@ allDestinations.map((location,index)=>{
     return    <DestinationCard key={index} destination={location}/>;
 });
   return (
-    <div>
+    <div className={styles.list_container}>
       {displayLocations}
           
     </div>

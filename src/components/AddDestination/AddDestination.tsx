@@ -64,9 +64,6 @@ const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation, trip}
     const handleSubmit=()=> {
         if(!validateDestination())return;
         const newLocation = {...coordinates,dates,name:value.label};
-        console.log(typeof(dates))
-        console.log({"AddDestination: startDay type":(dates instanceof Date?"false":typeof(dates?.[0]))})
-        console.log({"Nouvelle destination":newLocation});
         handleAddLocation(newLocation);
         setValue(null);
         setCoordinates({ lat: null,
@@ -84,7 +81,23 @@ const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation, trip}
         } 
         return true
     }
+
+/**
+ * 
+ * const validateDates = () =>{
+    if(trip.dates)
+    if (!dates || dates instanceof Date) {
+        console.log('Saisir les dates !');
+        return false;
+    } else if(dates[0]? && dates[1]?){
+
+    }
+        // console.log({"DestinationCard : destination":destination.dates instanceof Date?"false":typeof(destination.dates?.[0])});
+  }
+ * 
+ * **/ 
   
+
     const resetInputs = () =>{
         setValue(null);
         setCoordinates({lat:null,lng:null});

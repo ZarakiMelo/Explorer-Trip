@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MyTripPage.module.css';
 import NewTrip from '../../components/NewTrip/NewTrip';
-import { Trip, Value,Location, ValuePiece } from '../../types';
+import { Trip, Value,Location } from '../../types';
 import AddDestination from '../../components/AddDestination/AddDestination';
 import Mapp from '../../components/Mapp/Mapp';
 import DeleteTrip from '../../components/DeleteTrip/DeleteTrip';
@@ -25,7 +25,7 @@ const MyTripPage: React.FC = () => {
       return { state: false, name: "", startDay: new Date() ,locations:[]};
     }
   });
-
+  console.log({"trip":trip});
   useEffect(() => {
     try {
       localStorage.setItem('trip', JSON.stringify(trip));
@@ -79,7 +79,7 @@ const MyTripPage: React.FC = () => {
       {trip.state && (<>
       <AddDestination handleAddLocation={handleAddLocation} trip={trip}/>
       <Divider/>
-      <AllDestinationsList allDestinations={trip.locations}/>
+      <AllDestinationsList allDestinations={trip.locations} />
       <Divider/>
       <Mapp/>
       <Divider/>

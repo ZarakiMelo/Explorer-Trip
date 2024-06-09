@@ -47,7 +47,12 @@ const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation, trip}
         lng: null});
 
     const handleSelect = (address: any) => {
-        setValue(address.label);
+        if (!address || !address.label) {
+            console.error("Invalid address selected");
+            return;
+        }
+        console.log({"Lieu selectionné :":address.label})
+        setValue(address);
         geocodeByAddress(address.label)
             .then(results => getLatLng(results[0]))
             .then(({ lat, lng }) => {
@@ -58,7 +63,9 @@ const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation, trip}
 
     const handleSubmit=()=> {
         if(!validateDestination())return;
-        const newLocation = {...coordinates,dates,name:value};
+        const newLocation = {...coordinates,dates,name:value.label};
+        console.log(typeof(dates))
+        console.log({"AddDestination: startDay type":(dates instanceof Date?"false":typeof(dates?.[0]))})
         console.log({"Nouvelle destination":newLocation});
         handleAddLocation(newLocation);
         setValue(null);
@@ -87,6 +94,17 @@ const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation, trip}
     const handleDatesChange = (dates:Value)=>{
         setDates(dates);
     }
+
+    
+    const convertNullToUndefined = (value: Value): Date | undefined => {
+        if (value === null) {
+          return undefined;
+        }
+        if (Array.isArray(value)) {
+          return value[0] ?? undefined; // Assuming you want the first date in the range, or undefined if it's null
+        }
+        return value;
+      };
     return (
         <div className={styles.container}>
             <div className={styles.open_button_container}>
@@ -103,14 +121,16 @@ const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation, trip}
                                         <p className={styles.input_title}>Nom :</p>
                                         <GooglePlacesAutocomplete apiKey="AIzaSyCsdvOMtB6QvfVmAUxEYqRVPvtUr_szPy4"
                                         selectProps={{
-                                            value,
+                                            value:value,
                                             onChange: handleSelect,
+                                            getOptionLabel: (option: any) => option.label || "",
+                                            getOptionValue: (option: any) => option.place_id || "",
                                             styles: customStyles,
                                         }}/>
 
                                 </div>
                                 <div className={styles.calendar_container}>
-                                    <Calendar onChange={handleDatesChange} value={dates} minDate={new Date()} locale="fr" selectRange={true}
+                                    <Calendar onChange={handleDatesChange} value={dates} minDate={convertNullToUndefined(trip.startDay)} locale="fr" selectRange={true} 
                                     formatShortWeekday={(locale, date) => format(date, 'EEEEEE', { locale: fr })}
                                     formatMonth={(locale, date) => format(date, 'LLLL', { locale: fr })}
                                     formatMonthYear={(locale, date) => format(date, 'LLLL yyyy', { locale: fr })}/>

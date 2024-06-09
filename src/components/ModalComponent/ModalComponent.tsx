@@ -29,10 +29,9 @@ const customStyles: Modal.Styles = {
   };
 
 const ModalComponent:React.FC<ModalComponentProps> = ({closeModal,modal})=> {
-useEffect(()=>{
-  console.log({"Construction du composant - State":modal.state})
-},[])
-console.log({"State":modal.state})
+
+
+
   return (
     <Modal
     isOpen={modal.state}

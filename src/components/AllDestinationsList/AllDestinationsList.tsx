@@ -1,21 +1,26 @@
 import React from 'react';
 import styles from './AllDestinationsList.module.css'
-import { Location } from '../../types';
 import DestinationCard from '../DestinationCard/DestinationCard';
+import { AllDestinationsListProps } from '../../types';
 
-interface AllDestinationsListProps{
-    allDestinations : Location[],
-}
+
 const AllDestinationsList: React.FC<AllDestinationsListProps> = ({allDestinations}) => {
-const displayLocations =allDestinations.map((location)=>{
-    return<p>{location.lat}</p>
-})
+
+
+const displayLocations =
+
+allDestinations.map((location,index)=>{
+  if(location.dates && !(location.dates instanceof Date)){
+    //console.log(typeof(location.dates[0]))
+  }
+    return    <DestinationCard key={index} destination={location}/>;
+});
   return (
-   /* <div>
+    <div>
       {displayLocations}
           
-    </div>*/
-<DestinationCard/>
+    </div>
+
   )
 }
 

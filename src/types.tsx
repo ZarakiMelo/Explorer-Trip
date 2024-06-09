@@ -10,13 +10,9 @@ export type ValuePiece = Date | null;
 /**
  * Represents a date value, which can be either a complete date .
  */
-export type Value =  ValuePiece| [ValuePiece, ValuePiece] ;
+export type Value =  ValuePiece | [ValuePiece, ValuePiece] ;
 
-/**
- * Represents a pair of date values (start and end).
- */
-export type Values = Value ;
-/**
+/*
  * Represent a Coordinate Object.
  */
 export type Coordinates = {
@@ -125,3 +121,17 @@ export interface AddDestinationProps{
 export interface DeleteTripProps{
   handleDeleteTrip : () => void,
   } 
+  /**
+ * Propriétés pour le composant DestinationCard.
+ */
+ export interface AllDestinationsListProps{
+    allDestinations : Location[],
+   
+}
+  /**
+ * Propriétés pour le composant DestinationCard.
+ */
+export interface DestinationCardProps{
+    destination : Location,
+    
+  }

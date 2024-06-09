@@ -47,7 +47,7 @@ const NewTrip: React.FC<NewTripProps> = (props) => {
     if (!trip.name) {
       openModal("Saisir un nom de voyage", faPen,"#845A5A");
       return false;
-    } else if (formatDate(trip.startDay) === formatDate(new Date())) {
+    } else if (trip.startDay === new Date()) {
       openModal("On va peut-être attendre demain pour partir !!^^",faStop,"#845A5A");
       return false;
     }

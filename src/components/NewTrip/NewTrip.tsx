@@ -4,8 +4,8 @@ import MainNavBar from '../MainNavBar/MainNavBar';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '../../styles/CustomCalendar.css';
-import { ModalContent, NewTripProps } from '../../types';
-import ModalComponent from '../ModalComponent/ModalComponent';
+import { AlertModalContent, NewTripProps } from '../../types';
+import AlertModal from '../AlertModal/AlertModal';
 import { faPen, faStop, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
@@ -17,10 +17,10 @@ import { fr } from 'date-fns/locale';
  */
 const NewTrip: React.FC<NewTripProps> = (props) => {
   const [calendarOpen, setCalendarOpen] = useState<boolean>(false);
-  const [modal, setModal] = useState<ModalContent>({ type :"",state: false, message: "",icon : null, iconColor:""});
+  const [modal, setModal] = useState<AlertModalContent>({ type :"",state: false, message: "",icon : null, iconColor:""});
   const {trip,handleNameChange,handleStartDayChange,handleChangeState,formatDate} = props;
 
-  
+  //Modal functions
   const openModal = (message: string, icon : any, iconColor:string) => {
     setModal({ ...modal,state: true, message, icon, iconColor})
   }
@@ -59,7 +59,7 @@ const NewTrip: React.FC<NewTripProps> = (props) => {
   return (
     <div className={styles.container} style={{height:trip.state?"600px":"1040px"}}>
       <MainNavBar />
-      <ModalComponent modal={modal} closeModal={closeModal}></ModalComponent>
+      <AlertModal modal={modal} closeModal={closeModal}></AlertModal>
         
         {!trip.state && (
           <div className={styles.content}>
@@ -88,7 +88,6 @@ const NewTrip: React.FC<NewTripProps> = (props) => {
         )}
         {trip.state && (
           <>
-          
               <p className={styles.text}>{trip.name}</p>
                <p className={styles.text}>à partir du {formatDate(trip.startDay)}</p>
        

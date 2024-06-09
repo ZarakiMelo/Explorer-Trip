@@ -54,7 +54,7 @@ const MyTripPage: React.FC = () => {
   };
 
   const handleDeleteTrip = ()=>{
-    setTrip((prevTrip) => ({ state: false, name: "", startDay: new Date(),locations:[] }));
+    setTrip( ({ state: false, name: "", startDay: new Date(),locations:[] }));
   }
   /**
    * Formats a date into a string in "dd/MM/YYYY" format.
@@ -66,6 +66,16 @@ const MyTripPage: React.FC = () => {
     const options = { day: '2-digit' as const, month: '2-digit' as const, year: 'numeric' as const };
     return date.toLocaleDateString('fr-FR', options);
   };
+
+  const handleDeleteDestination = (id: number) => {
+    const newDestinations = trip.locations.filter((location) => location.id !== id);
+    setTrip((prevTrip) => ({
+      ...prevTrip,
+      locations: newDestinations
+    }));
+  };
+
+  
   console.log({"Trip in MyTripPage":trip});
   return (
     <div className={styles.container}>
@@ -79,7 +89,7 @@ const MyTripPage: React.FC = () => {
       {trip.state && (<>
       <AddDestination handleAddLocation={handleAddLocation} trip={trip}/>
       <Divider/>
-      <AllDestinationsList allDestinations={trip.locations} />
+      <AllDestinationsList allDestinations={trip.locations} handleDeleteDestination={handleDeleteDestination}/>
       <Divider/>
       <Mapp/>
       <Divider/>

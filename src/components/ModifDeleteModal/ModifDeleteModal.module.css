@@ -1,0 +1,23 @@
+
+
+
+
+.modal_message_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .message{
+    font-size: 30px;
+    text-align: center;
+    color:black;
+    font-family: var(--f1);
+  }
+ .buttons_container{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+margin-top: 20px;
+ }

@@ -24,6 +24,7 @@ export type Coordinates = {
  * Represent a location.
  */
 export type Location ={
+  id: number,
   lat:number | null,
   lng:number | null,
   dates : Value,
@@ -54,13 +55,14 @@ export interface ImageItem {
 /**
  * Represent a modal content.
  */
-export type ModalContent = {
+export type AlertModalContent = {
   type : string,
   state: boolean,
   message: string,
   icon : any,
   iconColor : string,
 };
+
 ////////////////////////INTERFACES////////////////////
 
 /**
@@ -85,7 +87,7 @@ export interface NewTripProps {
  * Propriétés pour le composant ModalButton.
  */
 export interface ConfirmCancelButtonProps {
-  color : number,
+color : number,
  text : string,
  action : () => void,
 }
@@ -101,11 +103,22 @@ export interface StepCardProps {
 }
 
 /**
- * Propriétés pour le composant Modal.
+ * Propriétés pour le composant AlertModal.
  */
-export interface ModalComponentProps{
-  modal:ModalContent,
+export interface AlertModalProps{
+  modal:AlertModalContent,
   closeModal : () => void,
+}
+/**
+ * Propriétés pour le composant ModifDeleteModal.
+ */
+export interface ModifDeleteModalProps{
+
+  destination : Location,
+  openCloseModal:()=> void,
+ modal:boolean,
+ formatDate: (date:ValuePiece) => void,
+ handleDeleteDestination :(id:number) => void
 }
 /**
  * Propriétés pour le composant AddDestination.
@@ -126,12 +139,14 @@ export interface DeleteTripProps{
  */
  export interface AllDestinationsListProps{
     allDestinations : Location[],
-   
+   handleDeleteDestination :(id:number) => void
 }
   /**
  * Propriétés pour le composant DestinationCard.
  */
 export interface DestinationCardProps{
     destination : Location,
-    
+    handleDeleteDestination :(id:number) => void,
+    modal: boolean,
+    openCloseModal:()=> void,
   }

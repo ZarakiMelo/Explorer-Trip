@@ -63,7 +63,7 @@ const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation, trip}
 
     const handleSubmit=()=> {
         if(!validateDestination())return;
-        const newLocation = {...coordinates,dates,name:value.label};
+        const newLocation = {...coordinates,dates,name:value.label, id:Date.now()};
         handleAddLocation(newLocation);
         setValue(null);
         setCoordinates({ lat: null,

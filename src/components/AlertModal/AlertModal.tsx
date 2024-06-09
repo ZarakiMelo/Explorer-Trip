@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import {  ModalComponentProps} from '../../types';
+import {  AlertModalProps} from '../../types';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faCalendar } from '@fortawesome/free-solid-svg-icons';
-import styles from './ModalComponent.module.css'
+import styles from './AlertModal.module.css'
 
 const customStyles: Modal.Styles = {
     content: {
@@ -28,7 +28,7 @@ const customStyles: Modal.Styles = {
     },
   };
 
-const ModalComponent:React.FC<ModalComponentProps> = ({closeModal,modal})=> {
+const AlertModal:React.FC<AlertModalProps> = ({closeModal,modal})=> {
 
 
 
@@ -53,4 +53,4 @@ const ModalComponent:React.FC<ModalComponentProps> = ({closeModal,modal})=> {
   )
 }
 
-export default ModalComponent
+export default AlertModal

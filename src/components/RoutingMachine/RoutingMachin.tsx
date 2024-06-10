@@ -21,7 +21,7 @@ const RoutingMachin: React.FC<RoutingMachinProps> = ({ allDestinations }) => {
       waypoints: waypoints,
       routeWhileDragging: true,
       show: false,
-      addWaypoints: false,
+      addWaypoints: false, // Désactive l'ajout de waypoints en cliquant sur l'itinéraire
     }).addTo(map);
 
     return () => {
@@ -31,10 +31,10 @@ const RoutingMachin: React.FC<RoutingMachinProps> = ({ allDestinations }) => {
     };
   }, [map, allDestinations]);
 
-  return null; 
+  return null; // Retourne null car le composant n'affiche aucun élément
 };
 
-
+// Vérifie si l'objet est une instance de L.Control
 function isControl(obj: any): obj is L.Control {
   return obj && typeof obj.removeFrom === 'function';
 }

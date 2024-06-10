@@ -5,7 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet-routing-machine';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css'
-import { MappProps, Location } from '../../types';
+import { MappProps} from '../../types';
 import RoutingMachin from '../RoutingMachine/RoutingMachin';
 
 const Mapp: React.FC<MappProps> = ({ allDestinations }) => {

@@ -150,3 +150,10 @@ export interface DestinationCardProps{
     modal: boolean,
     openCloseModal:()=> void,
   }
+
+    /**
+ * Propriétés pour le composant Mapp.
+ */
+export interface MappProps{
+  allDestinations : Location[],
+}

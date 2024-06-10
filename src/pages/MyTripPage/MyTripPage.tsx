@@ -91,7 +91,7 @@ const MyTripPage: React.FC = () => {
       <Divider/>
       <AllDestinationsList allDestinations={trip.locations} handleDeleteDestination={handleDeleteDestination}/>
       <Divider/>
-      <Mapp/>
+      <Mapp allDestinations={trip.locations}/>
       <Divider/>
       <DeleteTrip handleDeleteTrip={handleDeleteTrip}/>
       </>)}

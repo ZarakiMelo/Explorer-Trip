@@ -10,14 +10,7 @@ const AllDestinationsList: React.FC<AllDestinationsListProps> = ({allDestination
   const openCloseModal = () => {
     setModal(!modal)
   }
-/*
-const displayLocations =
-allDestinations.map((location)=>{
-  if(location.dates && !(location.dates instanceof Date)){
-    //console.log(typeof(location.dates[0]))
-  }
-    return    <DestinationCard key={location.id} destination={location} modal={modal} handleDeleteDestination={handleDeleteDestination} openCloseModal={openCloseModal} />;
-});*/
+
 const displayLocations = allDestinations
   .filter((location) => {
     return Array.isArray(location.dates) && location.dates[0] instanceof Date;

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 
 import styles from './DestinationCard.module.css';
 import { DestinationCardProps, Value, ValuePiece } from '../../types';
@@ -9,8 +9,7 @@ import ModifDeleteModal from '../ModifDeleteModal/ModifDeleteModal';
 
 const DestinationCard:React.FC<DestinationCardProps> = ({destination, handleDeleteDestination, modal, openCloseModal})=> {
 
-  
- // console.log({"DestinationCard : destination":destination.dates instanceof Date?"false":typeof(destination.dates?.[0])});
+ console.log({"DestinationCard : destination":destination});
   const formatDate = (date: ValuePiece) => {
     if(!date || !(date instanceof Date))return "false";
     const options = { day: '2-digit' as const, month: '2-digit' as const, year: 'numeric' as const };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MyTripPage.module.css';
 import NewTrip from '../../components/NewTrip/NewTrip';
-import { Trip, Value,LocationData } from '../../types';
+import { Trip, Value,LocationData, ValuePiece } from '../../types';
 import AddDestination from '../../components/AddDestination/AddDestination';
 import Mapp from '../../components/Mapp/Mapp';
 import DeleteTrip from '../../components/DeleteTrip/DeleteTrip';
@@ -14,6 +14,7 @@ const MyTripPage: React.FC = () => {
       const savedTrip = localStorage.getItem('trip');
       if (savedTrip) {
         const parsedTrip = JSON.parse(savedTrip);
+        console.log("Loaded trip from localStorage:", parsedTrip); // Add this line
         return {
           ...parsedTrip,
           startDay: parsedTrip.startDay ? new Date(parsedTrip.startDay) : new Date(),
@@ -25,7 +26,6 @@ const MyTripPage: React.FC = () => {
       return { state: false, name: "", startDay: new Date() ,locations:[]};
     }
   });
-  console.log({"trip":trip});
   useEffect(() => {
     try {
       localStorage.setItem('trip', JSON.stringify(trip));
@@ -38,8 +38,12 @@ const MyTripPage: React.FC = () => {
     setTrip((prevTrip) => ({ ...prevTrip, name }));
   };
 
-  const handleStartDayChange = (startDay: Value) => {
-    setTrip((prevTrip) => ({ ...prevTrip, startDay }));
+  const handleStartDayChange = (startDay: ValuePiece | [ValuePiece, ValuePiece]) => {
+    if (Array.isArray(startDay)) {
+      setTrip((prevTrip) => ({ ...prevTrip, startDay: startDay[0] })); // On ne prend que la première date pour startDay
+    } else {
+      setTrip((prevTrip) => ({ ...prevTrip, startDay }));
+    }
   };
 
   const handleChangeState = (state: boolean) => {
@@ -75,8 +79,21 @@ const MyTripPage: React.FC = () => {
     }));
   };
 
+  const sortDestinations = (destinations : LocationData[]) => {
+   const sortedData = destinations
+  .filter((location) => {
+    return Array.isArray(location.dates) && location.dates[0] instanceof Date;
+  })
+  .sort((a, b) => {
+    const dateA = new Date((a.dates as [Date, Date])[0]).getTime();
+    const dateB = new Date((b.dates as [Date, Date])[0]).getTime();
+    return dateA - dateB; // Trier par date de début (ascendant)
+  })
+  return sortedData
+  };
   
   console.log({"Trip in MyTripPage":trip});
+
   return (
     <div className={styles.container}>
     <NewTrip 
@@ -89,9 +106,9 @@ const MyTripPage: React.FC = () => {
       {trip.state && (<>
       <AddDestination handleAddLocation={handleAddLocation} trip={trip}/>
       <Divider/>
-      <AllDestinationsList allDestinations={trip.locations} handleDeleteDestination={handleDeleteDestination}/>
+      <AllDestinationsList trip={trip} handleDeleteDestination={handleDeleteDestination} sortDestinations={sortDestinations}/>
       <Divider/>
-      <Mapp allDestinations={trip.locations}/>
+      <Mapp trip={trip} sortDestinations={sortDestinations}/>
       <Divider/>
       <DeleteTrip handleDeleteTrip={handleDeleteTrip}/>
       </>)}

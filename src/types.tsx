@@ -37,7 +37,7 @@ export type LocationData ={
 export type Trip = {
   state: boolean,
   name: string,
-  startDay: Value,
+  startDay: ValuePiece,
   locations:LocationData[],
 };
 
@@ -79,7 +79,7 @@ export interface QuoteProps {
 export interface NewTripProps {
   trip: Trip;
   handleNameChange: (name: string) => void;
-  handleStartDayChange: (startDay: Value) => void;
+  handleStartDayChange: (value: ValuePiece | [ValuePiece, ValuePiece]) => void;
   handleChangeState: (state: boolean) => void;
   formatDate: (date: Value) => string;
 }
@@ -137,8 +137,9 @@ export interface DeleteTripProps{
  * Propriétés pour le composant DestinationCard.
  */
  export interface AllDestinationsListProps{
-    allDestinations : LocationData[],
+    trip:Trip,
    handleDeleteDestination :(id:number) => void
+   sortDestinations:(destinations:LocationData[]) => LocationData[]
 }
   /**
  * Propriétés pour le composant DestinationCard.
@@ -154,13 +155,15 @@ export interface DestinationCardProps{
  * Propriétés pour le composant Mapp.
  */
 export interface MappProps{
-  allDestinations : LocationData[],
+  trip:Trip
+  sortDestinations:(destinations:LocationData[]) => LocationData[]
 }
 
     /**
  * Propriétés pour le composant RoutingMachin.
  */
     export interface RoutingMachinProps{
-      allDestinations : LocationData[],
+      trip : Trip,
       defaultIcon:L.Icon<L.IconOptions>
+      sortDestinations:(destinations:LocationData[]) => LocationData[]
     }

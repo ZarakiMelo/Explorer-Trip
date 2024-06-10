@@ -63,7 +63,8 @@ const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation, trip}
 
     const handleSubmit=()=> {
         if(!validateDestination())return;
-        const newLocation = {...coordinates,dates,name:value.label, id:Date.now()};
+        const locationNameFormated = `${value.label.slice(0,50)}...`
+        const newLocation = {...coordinates,dates,name:locationNameFormated, id:Date.now()};
         handleAddLocation(newLocation);
         setValue(null);
         setCoordinates({ lat: null,
@@ -121,7 +122,7 @@ const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation, trip}
     return (
         <div className={styles.container}>
             <div className={styles.open_button_container}>
-                <button className={styles.window_button} type='button' onClick={()=>{setOpen(!open)}}>Choisissez votre destination</button>
+                <button className={styles.window_button} type='button' onClick={()=>{setOpen(!open)}}>Ajouter une destination</button>
             </div>
                      
                      {open && <>
@@ -159,7 +160,7 @@ const AddDestination: React.FC<AddDestinationProps> = ({handleAddLocation, trip}
                             <ConfirmCancelButton action={handleSubmit} color={1} text="Valider"/>
                         </div>
                         <div className={styles.cancelButton_container}>
-                            <ConfirmCancelButton action={resetInputs} color={3} text="Annuler"/>
+                            <ConfirmCancelButton action={resetInputs} color={3} text="Effacer"/>
                         </div>
                      </div>
                      </>}

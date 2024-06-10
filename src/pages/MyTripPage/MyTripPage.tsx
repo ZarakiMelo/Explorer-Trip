@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MyTripPage.module.css';
 import NewTrip from '../../components/NewTrip/NewTrip';
-import { Trip, Value,Location } from '../../types';
+import { Trip, Value,LocationData } from '../../types';
 import AddDestination from '../../components/AddDestination/AddDestination';
 import Mapp from '../../components/Mapp/Mapp';
 import DeleteTrip from '../../components/DeleteTrip/DeleteTrip';
@@ -46,7 +46,7 @@ const MyTripPage: React.FC = () => {
     setTrip((prevTrip) => ({ ...prevTrip, state: !state }));
   };
 
-  const handleAddLocation = (location: Location) => {
+  const handleAddLocation = (location: LocationData) => {
     setTrip((prevTrip) => ({
       ...prevTrip,
       locations: [...prevTrip.locations, location]

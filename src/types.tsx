@@ -23,7 +23,7 @@ export type Coordinates = {
 /**
  * Represent a location.
  */
-export type Location ={
+export type LocationData ={
   id: number,
   lat:number | null,
   lng:number | null,
@@ -38,7 +38,7 @@ export type Trip = {
   state: boolean,
   name: string,
   startDay: Value,
-  locations:Location[],
+  locations:LocationData[],
 };
 
 
@@ -113,8 +113,7 @@ export interface AlertModalProps{
  * Propriétés pour le composant ModifDeleteModal.
  */
 export interface ModifDeleteModalProps{
-
-  destination : Location,
+  destination : LocationData,
   openCloseModal:()=> void,
  modal:boolean,
  formatDate: (date:ValuePiece) => void,
@@ -124,7 +123,7 @@ export interface ModifDeleteModalProps{
  * Propriétés pour le composant AddDestination.
  */
 export interface AddDestinationProps{
-  handleAddLocation : (location:Location) => void,
+  handleAddLocation : (location:LocationData) => void,
   trip : Trip,
   } 
 
@@ -138,14 +137,14 @@ export interface DeleteTripProps{
  * Propriétés pour le composant DestinationCard.
  */
  export interface AllDestinationsListProps{
-    allDestinations : Location[],
+    allDestinations : LocationData[],
    handleDeleteDestination :(id:number) => void
 }
   /**
  * Propriétés pour le composant DestinationCard.
  */
 export interface DestinationCardProps{
-    destination : Location,
+    destination : LocationData,
     handleDeleteDestination :(id:number) => void,
     modal: boolean,
     openCloseModal:()=> void,
@@ -155,5 +154,5 @@ export interface DestinationCardProps{
  * Propriétés pour le composant Mapp.
  */
 export interface MappProps{
-  allDestinations : Location[],
+  allDestinations : LocationData[],
 }

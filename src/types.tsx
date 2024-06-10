@@ -157,3 +157,11 @@ export interface DestinationCardProps{
 export interface MappProps{
   allDestinations : Location[],
 }
+
+    /**
+ * Propriétés pour le composant RoutingMachin.
+ */
+    export interface RoutingMachinProps{
+      allDestinations : Location[],
+      defaultIcon:L.Icon<L.IconOptions>
+    }

@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {  AlertModalProps} from '../../types';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen, faCalendar } from '@fortawesome/free-solid-svg-icons';
 import styles from './AlertModal.module.css'
 
 const customStyles: Modal.Styles = {
@@ -25,11 +24,12 @@ const customStyles: Modal.Styles = {
     },
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.75)",
+      zIndex: 9998, 
     },
   };
 
-const AlertModal:React.FC<AlertModalProps> = ({closeModal,modal})=> {
-
+const AlertModal:React.FC<AlertModalProps> = (props)=> {
+const {closeModal, modal}=props
 
 
   return (
@@ -38,17 +38,17 @@ const AlertModal:React.FC<AlertModalProps> = ({closeModal,modal})=> {
     onRequestClose={closeModal}
     style={customStyles}
     contentLabel="Example Modal"
-    shouldCloseOnOverlayClick={false}
+    shouldCloseOnOverlayClick={true}
   >
-    <div className={styles.close_container}>
-      <button className={styles.close_button} type='button' onClick={closeModal}>X</button>
-    </div>
-    <div className={styles.modal_message_container}>
+   <div className={styles.modal_container}>
+
+     <div className={styles.modal_message_container}>
         <FontAwesomeIcon  className={modal.iconColor=="#845A5A"?styles.icon_reject:styles.icon_valid} icon={modal.icon}></FontAwesomeIcon>
        <p className={styles.message}>{modal.message}</p>
     </div>
+   </div>
    
-    {/*<ModalButton action={} text="Compris" color="#5A6E55"></ModalButton>*/}
+  
   </Modal>
   )
 }

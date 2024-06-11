@@ -86,7 +86,7 @@ export interface NewTripProps {
 /**
  * Propriétés pour le composant ModalButton.
  */
-export interface ConfirmCancelButtonProps {
+export interface ActionButtonProps {
 color : number,
  text : string,
  action : () => void,
@@ -114,10 +114,13 @@ export interface AlertModalProps{
  */
 export interface ModifDeleteModalProps{
   destination : LocationData,
-  openCloseModal: (location?: LocationData) => void; 
- modal:boolean,
+  openAlertModal : (message: string, icon : any, iconColor:string) => void,
+  openCloseModifModal: (location?: LocationData) => void; 
+ modifModal:boolean,
  formatDate: (date:ValuePiece) => void,
- handleDeleteDestination :(id:number) => void
+ handleDeleteDestination :(id:number) => void;
+ trip:Trip,
+ changeDates : (dates:Value,id:number) => void
 }
 /**
  * Propriétés pour le composant AddDestination.
@@ -139,7 +142,7 @@ export interface DeleteTripProps{
  export interface AllDestinationsListProps{
     trip:Trip,
    handleDeleteDestination :(id:number) => void
-
+   changeDates : (dates:Value,id:number) => void
 }
   /**
  * Propriétés pour le composant DestinationCard.
@@ -147,6 +150,8 @@ export interface DeleteTripProps{
 export interface DestinationCardProps{
     destination : LocationData,
     handleDeleteDestination :(id:number) => void,
+    trip:Trip
+    changeDates : (dates:Value,id:number) => void
   }
 
     /**

@@ -34,7 +34,7 @@ p{
 
 .delete_button{
     border-radius: 10px;
-    background-color: var(--color3);
+    background-color: var(--color1);
     height: 30px;
     width: 100px;
     color: var(--color2);
@@ -44,7 +44,7 @@ p{
 }
 .delete_button:hover{
     background-color: var(--color2);
-    color: var(--color3);
+    color: var(--color1);
     font-size: 16px;
     font-family: var(--f1);
     margin-top: 15px;

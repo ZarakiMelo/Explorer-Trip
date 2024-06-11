@@ -4,8 +4,8 @@ import { StepCardProps } from '../../types';
 
 
 
-const StepCard: React.FC<StepCardProps> = ({ text, src,description, number  }) => {
-  
+const StepCard: React.FC<StepCardProps> = (props) => {
+  const { text, src,description, number  }=props;
   return (
     <div className={styles.card}>
       <img className={styles.image} src={src} alt={description}/>

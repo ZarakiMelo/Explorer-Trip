@@ -8,7 +8,7 @@ const StepCard: React.FC<StepCardProps> = (props) => {
   const { text, src,description, number  }=props;
   return (
     <div className={styles.card}>
-      <img className={styles.image} src={src} alt={description}/>
+      <img className={styles.image} src={src} alt={description} loading="lazy"/>
       <p className={styles.text}>{text}</p>
       <p className={styles.number}>{number}</p>
     </div>

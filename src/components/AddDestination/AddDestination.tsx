@@ -50,6 +50,7 @@ const AddDestination: React.FC<AddDestinationProps> = (props) => {
     const [coordinates, setCoordinates] = useState<Coordinates>({ lat: null, lng: null });
     const [modal, setModal] = useState<AlertModalContent>({ type: "", state: false, message: "", icon: null, iconColor: "" });
     const { handleAddLocation, trip } = props;
+    const apiKey = process.env.REACT_APP_API_KEY
 
     /**
      * Resets the input fields.
@@ -173,7 +174,7 @@ const AddDestination: React.FC<AddDestinationProps> = (props) => {
                     <div className={styles.inputs_container}>
                         <div className={styles.name_input_container}>
                             <p className={styles.input_title}>Nom :</p>
-                            <GooglePlacesAutocomplete apiKey="AIzaSyCsdvOMtB6QvfVmAUxEYqRVPvtUr_szPy4"
+                            <GooglePlacesAutocomplete apiKey={apiKey}
                                 selectProps={{
                                     value: value,
                                     onChange: handleSelect,

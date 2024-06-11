@@ -79,18 +79,7 @@ const MyTripPage: React.FC = () => {
     }));
   };
 
-  const sortDestinations = (destinations : LocationData[]) => {
-   const sortedData = destinations
-  .filter((location) => {
-    return Array.isArray(location.dates) && location.dates[0] instanceof Date;
-  })
-  .sort((a, b) => {
-    const dateA = new Date((a.dates as [Date, Date])[0]).getTime();
-    const dateB = new Date((b.dates as [Date, Date])[0]).getTime();
-    return dateA - dateB; // Trier par date de début (ascendant)
-  })
-  return sortedData
-  };
+
   
   console.log({"Trip in MyTripPage":trip});
 
@@ -105,10 +94,14 @@ const MyTripPage: React.FC = () => {
   />
       {trip.state && (<>
       <AddDestination handleAddLocation={handleAddLocation} trip={trip}/>
+      {trip.locations.length>0 && 
+      <>
       <Divider/>
-      <AllDestinationsList trip={trip} handleDeleteDestination={handleDeleteDestination} sortDestinations={sortDestinations}/>
+      <AllDestinationsList trip={trip} handleDeleteDestination={handleDeleteDestination} />
       <Divider/>
-      <Mapp trip={trip} sortDestinations={sortDestinations}/>
+      <Mapp trip={trip}/>
+      </>}
+      
       <Divider/>
       <DeleteTrip handleDeleteTrip={handleDeleteTrip}/>
       </>)}

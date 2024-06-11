@@ -32,11 +32,20 @@ p{
     justify-content: center;
 }
 
-button{
+.delete_button{
     border-radius: 10px;
     background-color: var(--color3);
+    height: 30px;
     width: 100px;
     color: var(--color2);
     font-size: 16px;
     font-family: var(--f1);
+    margin-top: 15px;
+}
+.delete_button:hover{
+    background-color: var(--color2);
+    color: var(--color3);
+    font-size: 16px;
+    font-family: var(--f1);
+    margin-top: 15px;
 }

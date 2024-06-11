@@ -5,7 +5,7 @@ import { DeleteTripProps } from '../../types';
 
 const DeleteTrip : React.FC<DeleteTripProps>= ({handleDeleteTrip})=> {
   return (
-    <div>
+    <div className={styles.container}>
       <button type='button' onClick={handleDeleteTrip}>SUPPRIMER LE VOYAGE</button>
     </div>
   )

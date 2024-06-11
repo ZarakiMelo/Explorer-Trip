@@ -2,15 +2,17 @@ import React, {useState} from 'react';
 import styles from './AllDestinationsList.module.css'
 import DestinationCard from '../DestinationCard/DestinationCard';
 import { AllDestinationsListProps, ValuePiece } from '../../types';
-import { Value } from '../../types';
+import { Value,LocationData } from '../../types';
 
 
 const AllDestinationsList: React.FC<AllDestinationsListProps> = ({trip, handleDeleteDestination}) => {
-  const [modal, setModal] = useState<boolean>(false);
-  //Modal functions
-  const openCloseModal = () => {
-    setModal(!modal)
-  }
+  //const [modal, setModal] = useState<boolean>(false);
+  //const [selectedDestination, setSelectedDestination] = useState<LocationData | null>(null);
+
+  /*const openCloseModal = (destination?: LocationData) => {
+    setSelectedDestination(destination || null);
+    setModal(!modal);
+  };*/
 
 if(Array.isArray(trip.locations[0].dates))console.log("Location type dates before filter:", typeof(trip.locations[0].dates[0]));
 
@@ -20,6 +22,7 @@ const parseDates = (dates: any): [ValuePiece, ValuePiece] | null => {
   }
   return null;
 };
+
 
 const displayLocations = trip.locations
   .map((location) => {
@@ -41,13 +44,11 @@ const displayLocations = trip.locations
     <DestinationCard
       key={location.id}
       destination={location}
-      modal={modal}
       handleDeleteDestination={handleDeleteDestination}
-      openCloseModal={openCloseModal}
     />
   ));
 
-  console.log({"AllDestinations - Tableau envoyé en props à DestinationCard:":displayLocations})
+  //console.log({"AllDestinations - Tableau envoyé en props à DestinationCard:":displayLocations})
   return (
     <div className={styles.list_container}>
       {displayLocations}

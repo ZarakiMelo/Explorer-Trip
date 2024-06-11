@@ -1,6 +1,16 @@
+.container{
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 button{
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    height: 80px;
     background-color: var(--color3);
-    color:var(--color2)
+    color:var(--color2);
+    font-size: 30px;
+    border-radius: 10px;
 }

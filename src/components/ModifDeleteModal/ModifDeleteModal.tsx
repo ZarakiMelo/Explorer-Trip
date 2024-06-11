@@ -26,6 +26,7 @@ const customStyles: Modal.Styles = {
     },
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.75)",
+      zIndex: 9998, 
     },
   };
 
@@ -35,11 +36,11 @@ const deleteDestination = () => {
     openCloseModal()
     handleDeleteDestination(destination.id)
 }
-
+//console.log({"Modal - destination name:":destination.name})
   return (
     <Modal
     isOpen={modal}
-    onRequestClose={openCloseModal}
+    onRequestClose={() => openCloseModal()}
     style={customStyles}
     contentLabel="Example Modal"
     shouldCloseOnOverlayClick={false}

@@ -114,7 +114,7 @@ export interface AlertModalProps{
  */
 export interface ModifDeleteModalProps{
   destination : LocationData,
-  openCloseModal:()=> void,
+  openCloseModal: (location?: LocationData) => void; 
  modal:boolean,
  formatDate: (date:ValuePiece) => void,
  handleDeleteDestination :(id:number) => void
@@ -139,7 +139,7 @@ export interface DeleteTripProps{
  export interface AllDestinationsListProps{
     trip:Trip,
    handleDeleteDestination :(id:number) => void
-   sortDestinations:(destinations:LocationData[]) => LocationData[]
+
 }
   /**
  * Propriétés pour le composant DestinationCard.
@@ -147,8 +147,6 @@ export interface DeleteTripProps{
 export interface DestinationCardProps{
     destination : LocationData,
     handleDeleteDestination :(id:number) => void,
-    modal: boolean,
-    openCloseModal:()=> void,
   }
 
     /**
@@ -156,7 +154,7 @@ export interface DestinationCardProps{
  */
 export interface MappProps{
   trip:Trip
-  sortDestinations:(destinations:LocationData[]) => LocationData[]
+
 }
 
     /**
@@ -165,5 +163,5 @@ export interface MappProps{
     export interface RoutingMachinProps{
       trip : Trip,
       defaultIcon:L.Icon<L.IconOptions>
-      sortDestinations:(destinations:LocationData[]) => LocationData[]
+
     }

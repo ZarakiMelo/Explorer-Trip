@@ -15,6 +15,7 @@
   .logo{
     height: 200px;
     width: 200px;
+    border:none
   }
 
   .nav_container{
@@ -34,7 +35,7 @@
     .nav_link {
       color: #fff;
       font-family:var(--f1);
-      font-size: 20px;
+      font-size: 30px;
       font-style: italic;
       text-decoration: none;
     }

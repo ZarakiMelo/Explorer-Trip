@@ -14,7 +14,7 @@ import { ValuePiece } from '../../types';
  */
 const RoutingMachin: React.FC<RoutingMachinProps> = ({ trip }) => {
   const map = useMap();
-  const routingControlRef = useRef<L.Routing.Control | null>(null);
+  const routingControlRef = useRef<L.Routing.Control | null >(null);
 
    /**
    * Parses date strings into Date objects.
@@ -48,7 +48,7 @@ const RoutingMachin: React.FC<RoutingMachinProps> = ({ trip }) => {
     
     useEffect(() => {
       if (routingControlRef.current) {
-        console.log('Routing - controlCourant détecté')
+        console.log('Removing current routing control');
         map.removeControl(routingControlRef.current);
       }
     
@@ -59,6 +59,11 @@ const RoutingMachin: React.FC<RoutingMachinProps> = ({ trip }) => {
         }
       });
     
+      if (waypoints.length === 0) {
+        console.log('No waypoints to display');
+        return; // No waypoints to display
+      }
+
       const routingControl = L.Routing.control({
         waypoints: waypoints,
         routeWhileDragging: false,
@@ -71,6 +76,7 @@ const RoutingMachin: React.FC<RoutingMachinProps> = ({ trip }) => {
     
       return () => {
         if (routingControlRef.current) {
+          console.log('Cleaning up routing control');
           map.removeControl(routingControlRef.current);
           routingControlRef.current = null;
         }

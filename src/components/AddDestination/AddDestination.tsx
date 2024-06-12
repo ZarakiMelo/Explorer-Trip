@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './AddDestination.module.css';
 import { AddDestinationProps, Coordinates, Value, AlertModalContent } from '../../types';
 import AlertModal from '../AlertModal/AlertModal';
-import ConfirmCancelButton from '../ModalButton/ActionButton';
+import ActionButton from '../ActionButton/ActionButton';
 import GooglePlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -160,13 +160,13 @@ const AddDestination: React.FC<AddDestinationProps> = (props) => {
     };
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} >
             <AlertModal modal={modal} closeModal={closeAlertModal}></AlertModal>
             <div className={styles.open_button_container}>
                 <button className={styles.window_button} type='button' onClick={() => { setOpenPage(!openPage) }}>Ajouter une destination</button>
             </div>
 
-            {openPage && <>
+            <div className={`${styles.window_container} ${openPage ? styles.open : ''}`}>
                 <div className={styles.main_container}>
                     <div className={styles.img_container}>
                         <img src='/montainFromBoatPicture.jpg' alt='map planner' />
@@ -194,13 +194,13 @@ const AddDestination: React.FC<AddDestinationProps> = (props) => {
 
                 <div className={styles.buttons_container}>
                     <div className={styles.confirmButton_container}>
-                        <ConfirmCancelButton action={handleSubmit} color={1} text="Valider" />
+                        <ActionButton action={handleSubmit} color={1} text="Valider" />
                     </div>
                     <div className={styles.cancelButton_container}>
-                        <ConfirmCancelButton action={resetInputs} color={3} text="Effacer" />
+                        <ActionButton action={resetInputs} color={3} text="Effacer" />
                     </div>
                 </div>
-            </>}
+            </div>
         </div>
     )
 }

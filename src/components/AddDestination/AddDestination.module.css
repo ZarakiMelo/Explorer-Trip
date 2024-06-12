@@ -6,15 +6,34 @@
      border: 1px solid rgb(15, 15, 15);
 }
 
+.window_container {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+}
+
+.window_container.open {
+    opacity: 1;
+    max-height: 100%; /* Vous pouvez ajuster cette valeur selon vos besoins */
+}
+
 .window_button{
-    height: 60px;
+    height: 50px;
     width: 600px;
-    background-color: #5A6E55;
-    border:none;
-    border-radius: 10px;
+    background-color:var(--color2);
+    color: var(--color1);
+    border-radius: 20px;
     font-size: 40px;
-    color: #e0ddda;
+    border-color: var(--color1);
     font-family: var(--f1);
+  }
+  .window_button:hover{
+    background-color:var(--color1);
+    color: var(--color2);
+    border-color: var(--color2);
+    cursor: pointer;
+
   }
 .open_button_container{
     width: 100vw;
@@ -26,7 +45,7 @@
 
 .main_container{
     width: 100vw;
-    height: 700px;
+    height: 550px;
     display: flex;
     align-items: center;
 }

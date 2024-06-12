@@ -135,9 +135,12 @@ export interface AddDestinationProps{
  */
 export interface DeleteTripProps{
   handleDeleteTrip : () => void,
+  openAlertModal : (message: string, icon : any, iconColor:string) => void,
+  closeModal: () => void,
+  modal:AlertModalContent,
   } 
   /**
- * Propriétés pour le composant DestinationCard.
+ * Propriétés pour le composent DestinationCard.
  */
  export interface AllDestinationsListProps{
     trip:Trip,

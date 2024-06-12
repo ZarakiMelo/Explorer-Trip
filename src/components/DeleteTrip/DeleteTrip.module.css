@@ -1,16 +1,35 @@
 .container{
     width: 100vw;
-    height: 150px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url('/public/treesSkyPicture.png') no-repeat center center; 
+    background-size: cover;
 }
 
 button{
-    width: 300px;
-    height: 80px;
-    background-color: var(--color3);
-    color:var(--color2);
-    font-size: 30px;
+    height: 50px;
+    width: 600px;
+    background-color:transparent;
+    color: var(--color3);
     border-radius: 10px;
+    font-size: 40px;
+    border-color: var(--color3);
+    font-family: var(--f1);
+    margin-bottom: 50px;
+    
 }
+button:hover{
+    background-color:var(--color3);
+    color: var(--color2);
+    border-color: var(--colo2);
+    cursor: pointer;
+  }
+
+
+@media (max-width: 700px) {
+    .button{
+        width: 200px;
+    }
+  }

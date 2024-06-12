@@ -16,12 +16,15 @@
     align-items:center ;
     width: 450px;
     height: 150px;
-    background-color: #5A6E55 ;
+    background-color:transparent ;
     border-radius: 20px;
+    border: 1px solid var(--color2);
   }
 
   .nav:hover {
     cursor: pointer;
+    background-color:var(--color2) ;
+    color: var(--color1);
   }
 
   

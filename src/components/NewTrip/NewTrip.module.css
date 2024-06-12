@@ -1,6 +1,7 @@
 .container {
     position: relative;
     width: 100vw;
+    height: 100vh;
     background: url('/public/verdantLandScapePicture.jpg') no-repeat center center; 
     background-size: cover;
   }
@@ -103,7 +104,10 @@
   color: #e0ddda;
   font-family: var(--f1);
 }
-
+.window_button:hover{
+  background-color: #5A6E55;
+  cursor: pointer;
+}
 
 
 .text{

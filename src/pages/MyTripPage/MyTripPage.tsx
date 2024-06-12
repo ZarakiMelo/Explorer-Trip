@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MyTripPage.module.css';
 import NewTrip from '../../components/NewTrip/NewTrip';
-import { Trip, Value, LocationData, ValuePiece } from '../../types';
+import { Trip, Value, LocationData, ValuePiece, AlertModalContent } from '../../types';
 import AddDestination from '../../components/AddDestination/AddDestination';
 import Mapp from '../../components/Mapp/Mapp';
 import DeleteTrip from '../../components/DeleteTrip/DeleteTrip';
@@ -35,11 +35,26 @@ const MyTripPage: React.FC = () => {
   };
 
   const [trip, setTrip] = useState<Trip>(() => loadInitialTrip());
-
+  const [alertModal, setAlertModal] = useState<AlertModalContent>({ type: "", state: false, message: "", icon: null, iconColor: "" });
   useEffect(() => {
     saveTripToLocalStorage(trip);
   }, [trip]);
-
+  
+   /**
+   * Opens the alert modal with specified message, icon, and icon color.
+   * @param message - Message to display in the alert modal.
+   * @param icon - Icon to display in the alert modal.
+   * @param iconColor - Color of the icon in the alert modal.
+   */
+   const openAlertModal = (message: string, icon: any, iconColor: string) => {
+    setAlertModal({ ...alertModal, state: true, message, icon, iconColor });
+  }
+    /**
+   * Closes the alert modal.
+   */
+    const closeAlertModal = () => {
+      setAlertModal({ ...alertModal, state: false, message: "" });
+    }
  
   /**
    * Creates an empty trip object.
@@ -175,7 +190,7 @@ const MyTripPage: React.FC = () => {
             </>
           )}
           <Divider />
-          <DeleteTrip handleDeleteTrip={handleDeleteTrip} />
+          <DeleteTrip handleDeleteTrip={handleDeleteTrip} openAlertModal={openAlertModal} modal={alertModal} closeModal={closeAlertModal} />
         </>
       )}
     </div>

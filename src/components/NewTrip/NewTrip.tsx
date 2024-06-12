@@ -57,7 +57,7 @@ const NewTrip: React.FC<NewTripProps> = (props) => {
 
 
   return (
-    <div className={styles.container} style={{height:trip.state?"600px":"1040px"}}>
+    <div className={styles.container} >
       <MainNavBar />
       <AlertModal modal={modal} closeModal={closeModal}></AlertModal>
         

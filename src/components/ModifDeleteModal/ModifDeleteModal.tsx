@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ModifDeleteModalProps, Value } from '../../types';
+import { ModifDeleteModalProps, Value, AlertModalContent } from '../../types';
 import Modal from 'react-modal';
 import { faPen, faStop } from '@fortawesome/free-solid-svg-icons';
 import styles from './ModifDeleteModal.module.css';
-import ActionButton from '../ModalButton/ActionButton';
+import ActionButton from '../ActionButton/ActionButton';
+import AlertModal from '../AlertModal/AlertModal';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '../../styles/CustomCalendar.css';
@@ -43,7 +44,13 @@ const ModifDeleteModal: React.FC<ModifDeleteModalProps> = (props) => {
   const [dates, setDates] = useState<Value>([null, null]);
   const [modifMode, setModifMode] = useState<boolean>(false);
   const { openCloseModifModal, destination, modifModal, handleDeleteDestination, trip, changeDates, openAlertModal } = props;
-
+  const [alertModal, setAlertModal] = useState<AlertModalContent>({ type: "", state: false, message: "", icon: null, iconColor: "" });
+    /**
+   * Closes the alert modal.
+   */
+    const closeAlertModal = () => {
+      setAlertModal({ ...alertModal, state: false, message: "" });
+    }
   /**
    * Deletes the destination.
    */

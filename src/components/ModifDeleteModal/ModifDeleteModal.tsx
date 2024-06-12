@@ -41,9 +41,10 @@ const customStyles: Modal.Styles = {
  * @returns JSX.Element
  */
 const ModifDeleteModal: React.FC<ModifDeleteModalProps> = (props) => {
-  const [dates, setDates] = useState<Value>([null, null]);
+    const { openCloseModifModal, destination, modifModal, handleDeleteDestination, trip, changeDates, openAlertModal } = props;
+  const [dates, setDates] = useState<Value>(destination.dates);
   const [modifMode, setModifMode] = useState<boolean>(false);
-  const { openCloseModifModal, destination, modifModal, handleDeleteDestination, trip, changeDates, openAlertModal } = props;
+
   const [alertModal, setAlertModal] = useState<AlertModalContent>({ type: "", state: false, message: "", icon: null, iconColor: "" });
     /**
    * Closes the alert modal.

@@ -12,7 +12,7 @@ const HomeNavBar: React.FC = () => {
           <Link to="/myTripPage" className={styles['nav-links']} >Lancer un trip</Link>
         </li>
         <li className={styles['nav-item']}>
-          <Link to="/" className={styles['nav-links']} >Mes voyages</Link>
+          <Link to="/AllTripsPage" className={styles['nav-links']} >Mes voyages</Link>
         </li>
   
     </nav>

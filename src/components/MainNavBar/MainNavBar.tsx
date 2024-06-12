@@ -10,7 +10,7 @@ const MainNavBar = () => {
         </Link>
         <nav className={styles.nav_container}>
             <nav className={styles.nav_item}>
-                <Link to="/myTripPage" className={styles.nav_link} >Mes voyages</Link>
+                <Link to="/AllTripsPage" className={styles.nav_link} >Mes voyages</Link>
             </nav>
         </nav>
       </div>

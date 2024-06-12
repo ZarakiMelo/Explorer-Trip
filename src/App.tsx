@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import MyTripPage from './pages/MyTripPage/MyTripPage';
+import AllTripsPage from './pages/AllTrips/AllTripsPage';
 import NotFound from './pages/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 
@@ -12,6 +13,7 @@ const App: React.FC = () => {
          <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/MyTripPage" element={<MyTripPage/>} />
+        <Route path="/AllTripsPage" element={<AllTripsPage/>} />
         <Route path="*" element={<NotFound />} /> 
       </Routes>
       <Footer/>

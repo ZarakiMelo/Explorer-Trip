@@ -138,6 +138,7 @@ export interface DeleteTripProps{
   openAlertModal : (message: string, icon : any, iconColor:string) => void,
   closeModal: () => void,
   modal:AlertModalContent,
+  
   } 
   /**
  * Propriétés pour le composent DestinationCard.

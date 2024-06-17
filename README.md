@@ -15,6 +15,8 @@ ExplorerTrip is a web application that allows users to plan road trips in a simp
 
 <video src="./public/demo.mp4" alt="applicationVideoDemo" height="500px" controls></video>
 
+[Watch the demo video on Google Drive]([https://drive.google.com/file/d/your_video_id/view?usp=sharing](https://drive.google.com/file/d/1ZVFpfLXPU1no79IlQS8rXkzOfEjNhrmU/view?usp=sharing))
+
 ## Features
 
 - Create a new road trip by providing a name and departure date.

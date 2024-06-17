@@ -13,7 +13,7 @@ ExplorerTrip is a web application that allows users to plan road trips in a simp
 
 <img src="./public/verdantLandScapePicture.jpg" alt="verdantLandScapePicture" height="500px">
 
-[Watch the demo video on Google Drive]([https://drive.google.com/file/d/your_video_id/view?usp=sharing](https://drive.google.com/file/d/1ZVFpfLXPU1no79IlQS8rXkzOfEjNhrmU/view?usp=sharing))
+[Watch the demo video on Google Drive](https://drive.google.com/file/d/1ZVFpfLXPU1no79IlQS8rXkzOfEjNhrmU/view?usp=sharing)
 
 ## Features
 
